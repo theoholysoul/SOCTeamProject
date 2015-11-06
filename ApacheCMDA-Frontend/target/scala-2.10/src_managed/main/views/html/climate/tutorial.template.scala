@@ -92,7 +92,7 @@ In these videos, we will help you learn the available web services, how to use t
 }
                 /*
                     -- GENERATED --
-                    DATE: Thu Nov 05 22:34:50 PST 2015
+                    DATE: Thu Nov 05 23:00:20 PST 2015
                     SOURCE: /Users/vincent/Desktop/SoC/Lab/SOC-Fall-2015/ApacheCMDA-Frontend/app/views/climate/tutorial.scala.html
                     HASH: 1e7bfca2424dd940cf9b13846237a72ca8362f99
                     MATRIX: 3270->1205|3295->1221|3335->1223

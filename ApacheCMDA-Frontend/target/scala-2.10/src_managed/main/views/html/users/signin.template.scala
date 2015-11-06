@@ -66,7 +66,7 @@ Seq[Any](format.raw/*1.20*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Thu Nov 05 22:34:50 PST 2015
+                    DATE: Thu Nov 05 23:00:20 PST 2015
                     SOURCE: /Users/vincent/Desktop/SoC/Lab/SOC-Fall-2015/ApacheCMDA-Frontend/app/views/users/signin.scala.html
                     HASH: 0471a504d1329c760b1ebdaaa1b6d744c1454072
                     MATRIX: 785->1|897->19|934->22|965->45|1004->47|1044->53|1082->70|1144->98|1158->104|1207->145|1246->147|1328->194|1342->200|1488->324|1586->386|1601->392|1761->529|2119->851|2134->857|2178->879|2305->975|2339->978

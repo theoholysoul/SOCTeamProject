@@ -19,21 +19,28 @@ package models;
 import javax.persistence.*;
 
 import play.data.validation.Constraints;
+import play.data.validation.ValidationError;
 import play.db.ebean.Model;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class User extends Model {
 
 	@Id
 	@Constraints.Min(10)
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
-
-	private String userName;
+	public long id;
 
 	@Constraints.Required(groups = { SignIn.class, SignUp.class, Update.class })
-	private String password;
+	public String password;
 
+	@Constraints.Email
+	@Column(unique = true)
+	@Constraints.Required(groups = { SignIn.class, SignUp.class, Update.class })
+	public String email;
+
+	private String userName;
 	@Constraints.Required
 	private String firstName;
 	@Constraints.Required
@@ -42,10 +49,7 @@ public class User extends Model {
 	private String affiliation;
 	private String title;
 
-	@Constraints.Email
-	@Column(unique = true)
-	@Constraints.Required(groups = { SignIn.class, SignUp.class, Update.class })
-	private String email;
+
 	private String mailingAddress;
 	private String phoneNumber;
 	private String faxNumber;
@@ -190,6 +194,41 @@ public class User extends Model {
 
 	public void setHighestDegree(String highestDegree) {
 		this.highestDegree = highestDegree;
+	}
+
+	public static Finder<Long, User> find = new Finder<Long, User>(
+			Long.class, User.class
+	);
+
+	public static User byEmail(String email) {
+		return find.where()
+				.eq("email", email)
+				.findUnique();
+	}
+
+	public static User byEmailAndPassword(String email, String password) {
+		return find.where()
+				.eq("email", email)
+				.eq("password", password)
+				.findUnique();
+	}
+
+	public List<ValidationError> validate(Class group) {
+		List<ValidationError> errors = new ArrayList<ValidationError>();
+
+		if (group == SignIn.class) {
+			User user = byEmailAndPassword(email, password);
+
+			if (user == null) {
+				errors.add(new ValidationError("", "Invalid email or password."));
+			}
+		} else if (group == SignUp.class) {
+			if (User.byEmail(email) != null) {
+				errors.add(new ValidationError("email", "This email is already registered."));
+			}
+		}
+
+		return errors.isEmpty() ? null : errors;
 	}
 
 	@Override
