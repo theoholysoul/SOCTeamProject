@@ -16,23 +16,23 @@
  */
 package models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 import play.data.validation.Constraints;
+import play.db.ebean.Model;
 
 @Entity
-public class User {
+public class User extends Model {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 
 	private String userName;
-	@Constraints.Required
+
+	@Constraints.Required(groups = { SignIn.class, SignUp.class, Update.class })
 	private String password;
+
 	@Constraints.Required
 	private String firstName;
 	@Constraints.Required
@@ -40,7 +40,10 @@ public class User {
 	private String middleInitial;
 	private String affiliation;
 	private String title;
-	@Constraints.Required
+
+	@Constraints.Email
+	@Column(unique = true)
+	@Constraints.Required(groups = { SignIn.class, SignUp.class, Update.class })
 	private String email;
 	private String mailingAddress;
 	private String phoneNumber;
@@ -199,6 +202,12 @@ public class User {
 				+ ", researchFields=" + researchFields + ", highestDegree="
 				+ highestDegree + "]";
 	}
+
+	public interface SignIn { }
+
+	public interface SignUp { }
+
+	public interface Update { }
 
 }
 
