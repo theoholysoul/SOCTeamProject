@@ -25,6 +25,7 @@ import play.db.ebean.Model;
 public class User extends Model {
 
 	@Id
+	@Constraints.Min(10)
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 
