@@ -68,13 +68,14 @@ public class UserController extends Controller {
 	    String faxNumber = json.path("faxNumber").asText();
 	    String researchFields = json.path("researchFields").asText();
 	    String highestDegree = json.path("highestDegree").asText();
+		String description = json.path("description").asText();
 
 		try {
 			if (userRepository.findByUserName(userName).size()>0) {
 				System.out.println("UserName has been used: " + userName);
 				return badRequest("UserName has been used");
 			}
-			User user = new User(userName, password, firstName, lastName, middleInitial, affiliation, title, email, mailingAddress, phoneNumber, faxNumber, researchFields, highestDegree);	
+			User user = new User(userName, password, firstName, lastName, middleInitial, affiliation, title, email, mailingAddress, phoneNumber, faxNumber, researchFields, highestDegree, description);
 			userRepository.save(user);
 			System.out.println("User saved: " + user.getId());
 			return created(new Gson().toJson(user.getId()));
@@ -116,6 +117,7 @@ public class UserController extends Controller {
 	    String faxNumber = json.path("faxNumber").asText();
 	    String researchFields = json.path("researchFields").asText();
 	    String highestDegree = json.path("highestDegree").asText();
+		String description = json.path("description").asText();
 		try {
 			User updateUser = userRepository.findOne(id);
 
@@ -130,7 +132,7 @@ public class UserController extends Controller {
 			updateUser.setPhoneNumber(phoneNumber);
 			updateUser.setResearchFields(researchFields);
 			updateUser.setTitle(title);
-			
+			updateUser.setDescription(description);
 			User savedUser = userRepository.save(updateUser);
 			System.out.println("User updated: " + savedUser.getFirstName()
 					+ " " + savedUser.getLastName());

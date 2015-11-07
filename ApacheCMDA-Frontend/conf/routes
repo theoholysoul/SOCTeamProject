@@ -11,17 +11,18 @@ GET     /application                           controllers.Application.index()
 
 
 # Login page
-GET     /signin                     controllers.UserController.signIn()
-POST    /signin                     controllers.UserController.authenticate()
-GET     /signout                    controllers.UserController.signOut()
+
+#GET     /signin                     controllers.UserController.signIn()
+#POST    /signin                     controllers.UserController.authenticate()
+#GET     /signout                    controllers.UserController.signOut()
 
 # User page
-GET     /users                      controllers.UserController.index()
-GET     /users/create               controllers.UserController.create()
-POST    /users/create               controllers.UserController.save()
-GET     /users/:id                  controllers.UserController.show(id : Long)
-POST    /users/:id/update           controllers.UserController.update(id : Long)
-POST    /users/:id/delete           controllers.UserController.delete(id : Long)
+#GET     /users                      controllers.UserController.index()
+#GET     /users/create               controllers.UserController.create()
+#POST    /users/create               controllers.UserController.save()
+#GET     /users/:id                  controllers.UserController.show(id : Long)
+#POST    /users/:id/update           controllers.UserController.update(id : Long)
+#POST    /users/:id/delete           controllers.UserController.delete(id : Long)
 
 # BugReporting
 GET         /bugs                                                controllers.BugReportController.reports()
@@ -51,6 +52,10 @@ GET			/climate/oneService									controllers.ClimateServiceController.oneServic
 GET 		/climate/datasets									controllers.DatasetController.datasetList()
 GET			/climate/searchDataSet 					 			controllers.DatasetController.searchDataset()
 GET 		/climate/getSearchResult				 			controllers.DatasetController.getSearchResult()
+
+#User Profiles
+GET 		/users/all									        controllers.UserController.profile()
+GET 		/users/:userId									    controllers.UserController.oneUser(userId : Long)
 
 #Map static resources from the /public folder to the /assets URL path
 GET     	/assets/*file               						controllers.Assets.at(path="/public", file)

@@ -40,6 +40,7 @@ public class User {
 	private String faxNumber;
 	private String researchFields;
 	private String highestDegree;
+	private String description;
 
 	// @OneToMany(mappedBy = "user", cascade={CascadeType.ALL})
 	// private Set<ClimateService> climateServices = new
@@ -49,10 +50,10 @@ public class User {
 	}
 
 	public User(String userName, String password, String firstName,
-			String lastName, String middleInitial, String affiliation,
-			String title, String email, String mailingAddress,
-			String phoneNumber, String faxNumber, String researchFields,
-			String highestDegree) {
+				String lastName, String middleInitial, String affiliation,
+				String title, String email, String mailingAddress,
+				String phoneNumber, String faxNumber, String researchFields,
+				String highestDegree, String description) {
 		super();
 		this.userName = userName;
 		this.password = password;
@@ -67,6 +68,15 @@ public class User {
 		this.faxNumber = faxNumber;
 		this.researchFields = researchFields;
 		this.highestDegree = highestDegree;
+		this.description = description;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	public long getId() {
@@ -186,7 +196,7 @@ public class User {
 				+ ", email=" + email + ", mailingAddress=" + mailingAddress
 				+ ", phoneNumber=" + phoneNumber + ", faxNumber=" + faxNumber
 				+ ", researchFields=" + researchFields + ", highestDegree="
-				+ highestDegree + "]";
+				+ highestDegree + ", description=" + description + "]";
 	}
 
 }

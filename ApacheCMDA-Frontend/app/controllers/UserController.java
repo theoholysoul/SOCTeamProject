@@ -1,15 +1,13 @@
 package controllers;
 
+import models.DataSet;
 import models.User;
 import patches.GroupedForm;
+import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
-import play.mvc.Security;
-import views.html.errors.error404;
-import views.html.users.edit;
-import views.html.users.index;
-import views.html.users.signin;
-import views.html.users.signup;
+import views.html.climate.userList;
+import views.html.climate.oneUser;
 
 import java.util.List;
 
@@ -20,18 +18,30 @@ import static patches.GroupedForm.form;
 
 public class UserController extends Controller {
 
-    /**
-     * Sign in page.
-     */
+    final static Form<User> userForm = Form
+            .form(User.class);
+
+    /*s
     public static Result signIn() {
         return ok(
                 signin.render(form(User.class))
         );
     }
-
+*/
     /**
-     * Handle login form submission.
+     * Profile page.
      */
+    public static Result profile() {
+
+        return ok(userList.render(User.all(),
+                userForm));
+    }
+
+    public static Result oneUser(long userId) {
+        return ok(oneUser.render(User.getUser(userId)));
+    }
+
+    /*
     public static Result authenticate() {
         GroupedForm<User> form = form(User.class, User.SignIn.class).bindFromRequest();
 
@@ -47,9 +57,6 @@ public class UserController extends Controller {
         );
     }
 
-    /**
-     * Logout and clean the session.
-     */
     public static Result signOut() {
         session().clear();
         flash("success", "You've been signed out.");
@@ -59,9 +66,7 @@ public class UserController extends Controller {
         );
     }
 
-    /**
-     * Index page.
-     */
+
     @Security.Authenticated(Secured.class)
     public static Result index() {
         List<User> users = User.find.all();
@@ -71,18 +76,12 @@ public class UserController extends Controller {
         );
     }
 
-    /**
-     * Create page.
-     */
     public static Result create() {
         return ok(
                 signup.render(form(User.class))
         );
     }
 
-    /**
-     * Handle create form submission.
-     */
     public static Result save() {
         GroupedForm<User> form = form(User.class, User.SignUp.class).bindFromRequest();
 
@@ -100,16 +99,13 @@ public class UserController extends Controller {
         );
     }
 
-    /**
-     * Edit page.
-     */
     @Security.Authenticated(Secured.class)
     public static Result show(Long id) {
         User user = User.find.byId(id);
 
         if (user == null) {
             return notFound(
-                error404.render()
+                    error404.render()
             );
         }
 
@@ -120,9 +116,6 @@ public class UserController extends Controller {
         );
     }
 
-    /**
-     * Handle update form submission.
-     */
     @Security.Authenticated(Secured.class)
     public static Result update(Long id) {
         GroupedForm<User> form = form(User.class, User.Update.class).bindFromRequest();
@@ -140,9 +133,6 @@ public class UserController extends Controller {
         );
     }
 
-    /**
-     * Delete page.
-     */
     @Security.Authenticated(Secured.class)
     public static Result delete(Long id) {
         User user = User.find.ref(id);
@@ -159,4 +149,6 @@ public class UserController extends Controller {
                 routes.UserController.index()
         );
     }
+*/
+
 }

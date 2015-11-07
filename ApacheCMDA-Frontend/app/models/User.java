@@ -16,18 +16,33 @@
  */
 package models;
 
-import javax.persistence.*;
-
+import com.fasterxml.jackson.databind.JsonNode;
 import play.data.validation.Constraints;
 import play.data.validation.ValidationError;
-import play.db.ebean.Model;
+import util.APICall;
+import util.Constants;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
-@Entity
-public class User extends Model {
+public class User {
 
+	private static final String GET_ALL_USER = Constants.NEW_BACKEND + "users/getAllUsers/json";
+	private static final String GET_ONE_USER = Constants.NEW_BACKEND + "users/";
+
+	public long id;
+	public String userName;
+	public String firstName;
+	public String lastName;
+	public String affiliation;
+	public String email;
+	public String password;
+	public String description;
+
+/*
 	@Id
 	@Constraints.Min(10)
 	public long id;
@@ -59,10 +74,65 @@ public class User extends Model {
 	// @OneToMany(mappedBy = "user", cascade={CascadeType.ALL})
 	// private Set<ClimateService> climateServices = new
 	// HashSet<ClimateService>();
-
+*/
 	public User() {
 	}
 
+	public static User getUser(long userId) {
+
+		JsonNode json = APICall.callAPI(GET_ONE_USER + userId);
+
+		User user = new User();
+		user.id = json.get("id").asInt();
+		//System.out.println("here");
+		user.userName = getField(json, "userName");
+		user.firstName = getField(json, "firstName");
+		user.lastName = getField(json, "lastName");
+		user.affiliation = getField(json, "affiliation");
+		user.email = getField(json, "email");
+		user.password = getField(json, "password");
+		user.description = getField(json, "description");
+
+		return user;
+	}
+
+	public static List<User> all() {
+
+		List<User> users = new ArrayList<User>();
+
+		JsonNode userNode = APICall.callAPI(GET_ALL_USER);
+
+		if (userNode == null || userNode.has("error")
+				|| !userNode.isArray()) {
+			return users;
+		}
+
+		for (int i = 0; i < userNode.size(); i++) {
+			JsonNode json = userNode.path(i);
+			User user = new User();
+			user.id = json.get("id").asLong();
+			//System.out.println("here");
+			user.userName = getField(json, "userName");
+			user.firstName = getField(json, "firstName");
+			user.lastName = getField(json, "lastName");
+			user.affiliation = getField(json, "affiliation");
+			user.email = getField(json, "email");
+			user.password = getField(json, "password");
+			user.description = getField(json, "description");
+			users.add(user);
+		}
+		return users;
+	}
+
+	public static String getField(JsonNode node, String fieldName) {
+		if(node.get(fieldName)!=null) {
+			return node.get(fieldName).asText();
+		}
+		else {
+			return "";
+		}
+	}
+	/*
 	public User(String userName, String password, String firstName,
 			String lastName, String middleInitial, String affiliation,
 			String title, String email, String mailingAddress,
@@ -248,6 +318,6 @@ public class User extends Model {
 	public interface SignUp { }
 
 	public interface Update { }
-
+	*/
 }
 
