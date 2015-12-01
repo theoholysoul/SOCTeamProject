@@ -1,6 +1,6 @@
 // @SOURCE:/home/SOC-Fall-2015/Dev/SOC-Fall-2015/ApacheCMDA-Backend/conf/routes
-// @HASH:e96e26a337fbb66761533edb5e7687789222dff1
-// @DATE:Fri Nov 06 23:15:17 UTC 2015
+// @HASH:8be9e65a5cccb2ada48de33c23365845c3fe7c94
+// @DATE:Fri Nov 20 20:53:35 UTC 2015
 
 
 import play.core._
@@ -250,61 +250,166 @@ HandlerDef(this.getClass.getClassLoader, "", "controllers.ParameterController", 
         
 
 // @LINE:49
-private[this] lazy val controllers_UserController_getUser31_route = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("users/"),DynamicPart("id", """[^/]+""",true))))
-private[this] lazy val controllers_UserController_getUser31_invoker = createInvoker(
-play.api.Play.maybeApplication.map(_.global).getOrElse(play.api.DefaultGlobal).getControllerInstance(classOf[controllers.UserController]).getUser(fakeValue[Long], fakeValue[String]),
-HandlerDef(this.getClass.getClassLoader, "", "controllers.UserController", "getUser", Seq(classOf[Long], classOf[String]),"GET", """ Users""", Routes.prefix + """users/$id<[^/]+>"""))
+private[this] lazy val controllers_UserController_addUser31_route = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("users/add"))))
+private[this] lazy val controllers_UserController_addUser31_invoker = createInvoker(
+play.api.Play.maybeApplication.map(_.global).getOrElse(play.api.DefaultGlobal).getControllerInstance(classOf[controllers.UserController]).addUser,
+HandlerDef(this.getClass.getClassLoader, "", "controllers.UserController", "addUser", Nil,"POST", """ Users""", Routes.prefix + """users/add"""))
         
 
 // @LINE:50
-private[this] lazy val controllers_UserController_addUser32_route = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("users/add"))))
-private[this] lazy val controllers_UserController_addUser32_invoker = createInvoker(
-play.api.Play.maybeApplication.map(_.global).getOrElse(play.api.DefaultGlobal).getControllerInstance(classOf[controllers.UserController]).addUser,
-HandlerDef(this.getClass.getClassLoader, "", "controllers.UserController", "addUser", Nil,"POST", """""", Routes.prefix + """users/add"""))
-        
-
-// @LINE:51
-private[this] lazy val controllers_UserController_updateUser33_route = Route("PUT", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("users/update/"),DynamicPart("id", """[^/]+""",true))))
-private[this] lazy val controllers_UserController_updateUser33_invoker = createInvoker(
+private[this] lazy val controllers_UserController_updateUser32_route = Route("PUT", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("users/update/"),DynamicPart("id", """[^/]+""",true))))
+private[this] lazy val controllers_UserController_updateUser32_invoker = createInvoker(
 play.api.Play.maybeApplication.map(_.global).getOrElse(play.api.DefaultGlobal).getControllerInstance(classOf[controllers.UserController]).updateUser(fakeValue[Long]),
 HandlerDef(this.getClass.getClassLoader, "", "controllers.UserController", "updateUser", Seq(classOf[Long]),"PUT", """""", Routes.prefix + """users/update/$id<[^/]+>"""))
         
 
-// @LINE:52
-private[this] lazy val controllers_UserController_deleteUser34_route = Route("DELETE", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("users/delete/"),DynamicPart("id", """[^/]+""",true))))
-private[this] lazy val controllers_UserController_deleteUser34_invoker = createInvoker(
+// @LINE:51
+private[this] lazy val controllers_UserController_deleteUser33_route = Route("DELETE", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("users/delete/"),DynamicPart("id", """[^/]+""",true))))
+private[this] lazy val controllers_UserController_deleteUser33_invoker = createInvoker(
 play.api.Play.maybeApplication.map(_.global).getOrElse(play.api.DefaultGlobal).getControllerInstance(classOf[controllers.UserController]).deleteUser(fakeValue[Long]),
 HandlerDef(this.getClass.getClassLoader, "", "controllers.UserController", "deleteUser", Seq(classOf[Long]),"DELETE", """""", Routes.prefix + """users/delete/$id<[^/]+>"""))
         
 
-// @LINE:53
-private[this] lazy val controllers_UserController_getAllUsers35_route = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("users/getAllUsers/json"))))
-private[this] lazy val controllers_UserController_getAllUsers35_invoker = createInvoker(
+// @LINE:52
+private[this] lazy val controllers_UserController_getAllUsers34_route = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("users/getAllUsers/json"))))
+private[this] lazy val controllers_UserController_getAllUsers34_invoker = createInvoker(
 play.api.Play.maybeApplication.map(_.global).getOrElse(play.api.DefaultGlobal).getControllerInstance(classOf[controllers.UserController]).getAllUsers(fakeValue[String]),
 HandlerDef(this.getClass.getClassLoader, "", "controllers.UserController", "getAllUsers", Seq(classOf[String]),"GET", """""", Routes.prefix + """users/getAllUsers/json"""))
         
 
-// @LINE:54
-private[this] lazy val controllers_UserController_isUserValid36_route = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("users/isUserValid"))))
-private[this] lazy val controllers_UserController_isUserValid36_invoker = createInvoker(
+// @LINE:53
+private[this] lazy val controllers_UserController_isUserValid35_route = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("users/isUserValid"))))
+private[this] lazy val controllers_UserController_isUserValid35_invoker = createInvoker(
 play.api.Play.maybeApplication.map(_.global).getOrElse(play.api.DefaultGlobal).getControllerInstance(classOf[controllers.UserController]).isUserValid,
 HandlerDef(this.getClass.getClassLoader, "", "controllers.UserController", "isUserValid", Nil,"POST", """""", Routes.prefix + """users/isUserValid"""))
         
 
-// @LINE:55
-private[this] lazy val controllers_UserController_deleteUserByUserNameandPassword37_route = Route("DELETE", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("users/delete/userName/"),DynamicPart("userName", """[^/]+""",true),StaticPart("/password/"),DynamicPart("password", """[^/]+""",true))))
-private[this] lazy val controllers_UserController_deleteUserByUserNameandPassword37_invoker = createInvoker(
+// @LINE:54
+private[this] lazy val controllers_UserController_deleteUserByUserNameandPassword36_route = Route("DELETE", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("users/delete/userName/"),DynamicPart("userName", """[^/]+""",true),StaticPart("/password/"),DynamicPart("password", """[^/]+""",true))))
+private[this] lazy val controllers_UserController_deleteUserByUserNameandPassword36_invoker = createInvoker(
 play.api.Play.maybeApplication.map(_.global).getOrElse(play.api.DefaultGlobal).getControllerInstance(classOf[controllers.UserController]).deleteUserByUserNameandPassword(fakeValue[String], fakeValue[String]),
 HandlerDef(this.getClass.getClassLoader, "", "controllers.UserController", "deleteUserByUserNameandPassword", Seq(classOf[String], classOf[String]),"DELETE", """""", Routes.prefix + """users/delete/userName/$userName<[^/]+>/password/$password<[^/]+>"""))
         
 
+// @LINE:55
+private[this] lazy val controllers_UserController_getUser37_route = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("users/"),DynamicPart("id", """[^/]+""",true))))
+private[this] lazy val controllers_UserController_getUser37_invoker = createInvoker(
+play.api.Play.maybeApplication.map(_.global).getOrElse(play.api.DefaultGlobal).getControllerInstance(classOf[controllers.UserController]).getUser(fakeValue[Long], fakeValue[String]),
+HandlerDef(this.getClass.getClassLoader, "", "controllers.UserController", "getUser", Seq(classOf[Long], classOf[String]),"GET", """""", Routes.prefix + """users/$id<[^/]+>"""))
+        
+
 // @LINE:58
-private[this] lazy val controllers_Assets_at38_route = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("assets/"),DynamicPart("file", """.+""",false))))
-private[this] lazy val controllers_Assets_at38_invoker = createInvoker(
+private[this] lazy val controllers_UserGroupController_addUserGroup38_route = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("userGroup/add"))))
+private[this] lazy val controllers_UserGroupController_addUserGroup38_invoker = createInvoker(
+play.api.Play.maybeApplication.map(_.global).getOrElse(play.api.DefaultGlobal).getControllerInstance(classOf[controllers.UserGroupController]).addUserGroup,
+HandlerDef(this.getClass.getClassLoader, "", "controllers.UserGroupController", "addUserGroup", Nil,"POST", """ Group""", Routes.prefix + """userGroup/add"""))
+        
+
+// @LINE:59
+private[this] lazy val controllers_UserGroupController_getAllUsersInGroup39_route = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("userGroup/getAllUsersInGroup/"),DynamicPart("id", """[^/]+""",true))))
+private[this] lazy val controllers_UserGroupController_getAllUsersInGroup39_invoker = createInvoker(
+play.api.Play.maybeApplication.map(_.global).getOrElse(play.api.DefaultGlobal).getControllerInstance(classOf[controllers.UserGroupController]).getAllUsersInGroup(fakeValue[Long], fakeValue[String]),
+HandlerDef(this.getClass.getClassLoader, "", "controllers.UserGroupController", "getAllUsersInGroup", Seq(classOf[Long], classOf[String]),"GET", """""", Routes.prefix + """userGroup/getAllUsersInGroup/$id<[^/]+>"""))
+        
+
+// @LINE:60
+private[this] lazy val controllers_UserGroupController_getAllUserGroup40_route = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("userGroup/getAllUserGroup/"),DynamicPart("id", """[^/]+""",true))))
+private[this] lazy val controllers_UserGroupController_getAllUserGroup40_invoker = createInvoker(
+play.api.Play.maybeApplication.map(_.global).getOrElse(play.api.DefaultGlobal).getControllerInstance(classOf[controllers.UserGroupController]).getAllUserGroup(fakeValue[Long], fakeValue[String]),
+HandlerDef(this.getClass.getClassLoader, "", "controllers.UserGroupController", "getAllUserGroup", Seq(classOf[Long], classOf[String]),"GET", """""", Routes.prefix + """userGroup/getAllUserGroup/$id<[^/]+>"""))
+        
+
+// @LINE:61
+private[this] lazy val controllers_UserGroupController_addUserIntoUserGroup41_route = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("userGroup/addUserIntoUserGroup"))))
+private[this] lazy val controllers_UserGroupController_addUserIntoUserGroup41_invoker = createInvoker(
+play.api.Play.maybeApplication.map(_.global).getOrElse(play.api.DefaultGlobal).getControllerInstance(classOf[controllers.UserGroupController]).addUserIntoUserGroup,
+HandlerDef(this.getClass.getClassLoader, "", "controllers.UserGroupController", "addUserIntoUserGroup", Nil,"POST", """""", Routes.prefix + """userGroup/addUserIntoUserGroup"""))
+        
+
+// @LINE:62
+private[this] lazy val controllers_UserGroupController_getUserGroup42_route = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("userGroup/"),DynamicPart("id", """[^/]+""",true))))
+private[this] lazy val controllers_UserGroupController_getUserGroup42_invoker = createInvoker(
+play.api.Play.maybeApplication.map(_.global).getOrElse(play.api.DefaultGlobal).getControllerInstance(classOf[controllers.UserGroupController]).getUserGroup(fakeValue[Long], fakeValue[String]),
+HandlerDef(this.getClass.getClassLoader, "", "controllers.UserGroupController", "getUserGroup", Seq(classOf[Long], classOf[String]),"GET", """""", Routes.prefix + """userGroup/$id<[^/]+>"""))
+        
+
+// @LINE:65
+private[this] lazy val controllers_FriendController_addFriend43_route = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("friend/add"))))
+private[this] lazy val controllers_FriendController_addFriend43_invoker = createInvoker(
+play.api.Play.maybeApplication.map(_.global).getOrElse(play.api.DefaultGlobal).getControllerInstance(classOf[controllers.FriendController]).addFriend,
+HandlerDef(this.getClass.getClassLoader, "", "controllers.FriendController", "addFriend", Nil,"POST", """ Friend""", Routes.prefix + """friend/add"""))
+        
+
+// @LINE:66
+private[this] lazy val controllers_FriendController_deleteFriend44_route = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("friend/delete"))))
+private[this] lazy val controllers_FriendController_deleteFriend44_invoker = createInvoker(
+play.api.Play.maybeApplication.map(_.global).getOrElse(play.api.DefaultGlobal).getControllerInstance(classOf[controllers.FriendController]).deleteFriend,
+HandlerDef(this.getClass.getClassLoader, "", "controllers.FriendController", "deleteFriend", Nil,"POST", """""", Routes.prefix + """friend/delete"""))
+        
+
+// @LINE:67
+private[this] lazy val controllers_FriendController_isFriendValid45_route = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("friend/isFriendValid"))))
+private[this] lazy val controllers_FriendController_isFriendValid45_invoker = createInvoker(
+play.api.Play.maybeApplication.map(_.global).getOrElse(play.api.DefaultGlobal).getControllerInstance(classOf[controllers.FriendController]).isFriendValid,
+HandlerDef(this.getClass.getClassLoader, "", "controllers.FriendController", "isFriendValid", Nil,"POST", """""", Routes.prefix + """friend/isFriendValid"""))
+        
+
+// @LINE:68
+private[this] lazy val controllers_FriendController_getFriend46_route = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("friend/"),DynamicPart("id", """[^/]+""",true))))
+private[this] lazy val controllers_FriendController_getFriend46_invoker = createInvoker(
+play.api.Play.maybeApplication.map(_.global).getOrElse(play.api.DefaultGlobal).getControllerInstance(classOf[controllers.FriendController]).getFriend(fakeValue[Long], fakeValue[String]),
+HandlerDef(this.getClass.getClassLoader, "", "controllers.FriendController", "getFriend", Seq(classOf[Long], classOf[String]),"GET", """""", Routes.prefix + """friend/$id<[^/]+>"""))
+        
+
+// @LINE:71
+private[this] lazy val controllers_SubscriberController_addSubscriber47_route = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("subscriber/add"))))
+private[this] lazy val controllers_SubscriberController_addSubscriber47_invoker = createInvoker(
+play.api.Play.maybeApplication.map(_.global).getOrElse(play.api.DefaultGlobal).getControllerInstance(classOf[controllers.SubscriberController]).addSubscriber,
+HandlerDef(this.getClass.getClassLoader, "", "controllers.SubscriberController", "addSubscriber", Nil,"POST", """ Subscriber""", Routes.prefix + """subscriber/add"""))
+        
+
+// @LINE:72
+private[this] lazy val controllers_SubscriberController_deleteSubscriber48_route = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("subscriber/deleteSubscriber"))))
+private[this] lazy val controllers_SubscriberController_deleteSubscriber48_invoker = createInvoker(
+play.api.Play.maybeApplication.map(_.global).getOrElse(play.api.DefaultGlobal).getControllerInstance(classOf[controllers.SubscriberController]).deleteSubscriber,
+HandlerDef(this.getClass.getClassLoader, "", "controllers.SubscriberController", "deleteSubscriber", Nil,"POST", """""", Routes.prefix + """subscriber/deleteSubscriber"""))
+        
+
+// @LINE:73
+private[this] lazy val controllers_SubscriberController_getSubscriberByUserId49_route = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("subscriber/getSubscriberByUserId/"),DynamicPart("id", """[^/]+""",true))))
+private[this] lazy val controllers_SubscriberController_getSubscriberByUserId49_invoker = createInvoker(
+play.api.Play.maybeApplication.map(_.global).getOrElse(play.api.DefaultGlobal).getControllerInstance(classOf[controllers.SubscriberController]).getSubscriberByUserId(fakeValue[Long], fakeValue[String]),
+HandlerDef(this.getClass.getClassLoader, "", "controllers.SubscriberController", "getSubscriberByUserId", Seq(classOf[Long], classOf[String]),"GET", """""", Routes.prefix + """subscriber/getSubscriberByUserId/$id<[^/]+>"""))
+        
+
+// @LINE:74
+private[this] lazy val controllers_SubscriberController_getCollectorByUserId50_route = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("subscriber/getCollectorByUserId/"),DynamicPart("id", """[^/]+""",true))))
+private[this] lazy val controllers_SubscriberController_getCollectorByUserId50_invoker = createInvoker(
+play.api.Play.maybeApplication.map(_.global).getOrElse(play.api.DefaultGlobal).getControllerInstance(classOf[controllers.SubscriberController]).getCollectorByUserId(fakeValue[Long], fakeValue[String]),
+HandlerDef(this.getClass.getClassLoader, "", "controllers.SubscriberController", "getCollectorByUserId", Seq(classOf[Long], classOf[String]),"GET", """""", Routes.prefix + """subscriber/getCollectorByUserId/$id<[^/]+>"""))
+        
+
+// @LINE:75
+private[this] lazy val controllers_SubscriberController_isSubscriberValid51_route = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("subscriber/isSubscriberValid"))))
+private[this] lazy val controllers_SubscriberController_isSubscriberValid51_invoker = createInvoker(
+play.api.Play.maybeApplication.map(_.global).getOrElse(play.api.DefaultGlobal).getControllerInstance(classOf[controllers.SubscriberController]).isSubscriberValid,
+HandlerDef(this.getClass.getClassLoader, "", "controllers.SubscriberController", "isSubscriberValid", Nil,"POST", """""", Routes.prefix + """subscriber/isSubscriberValid"""))
+        
+
+// @LINE:76
+private[this] lazy val controllers_SubscriberController_getSubscriber52_route = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("subscriber/"),DynamicPart("id", """[^/]+""",true))))
+private[this] lazy val controllers_SubscriberController_getSubscriber52_invoker = createInvoker(
+play.api.Play.maybeApplication.map(_.global).getOrElse(play.api.DefaultGlobal).getControllerInstance(classOf[controllers.SubscriberController]).getSubscriber(fakeValue[Long], fakeValue[String]),
+HandlerDef(this.getClass.getClassLoader, "", "controllers.SubscriberController", "getSubscriber", Seq(classOf[Long], classOf[String]),"GET", """""", Routes.prefix + """subscriber/$id<[^/]+>"""))
+        
+
+// @LINE:79
+private[this] lazy val controllers_Assets_at53_route = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("assets/"),DynamicPart("file", """.+""",false))))
+private[this] lazy val controllers_Assets_at53_invoker = createInvoker(
 controllers.Assets.at(fakeValue[String], fakeValue[String]),
 HandlerDef(this.getClass.getClassLoader, "", "controllers.Assets", "at", Seq(classOf[String], classOf[String]),"GET", """ Map static resources from the /public folder to the /assets URL path""", Routes.prefix + """assets/$file<.+>"""))
         
-def documentation = List(("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """climateService/getClimateService/$name<[^/]+>/json""","""@controllers.ClimateServiceController@.getClimateService(name:String, format:String = "json")"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """climateService/getClimateService/id/$id<[^/]+>""","""@controllers.ClimateServiceController@.getClimateServiceById(id:Long)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """climateService/getAllClimateServices/json""","""@controllers.ClimateServiceController@.getAllClimateServices(format:String = "json")"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """climateService/getAllMostRecentClimateServicesByCreateTime/json""","""@controllers.ClimateServiceController@.getAllClimateServicesOrderByCreateTime(format:String = "json")"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """climateService/getAllMostRecentClimateServicesByLatestAccessTime/json""","""@controllers.ClimateServiceController@.getAllClimateServicesOrderByLatestAccessTime(format:String = "json")"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """climateService/getAllMostUsedClimateServices/json""","""@controllers.ClimateServiceController@.getAllClimateServicesOrderByCount(format:String = "json")"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """climateService/addClimateService""","""@controllers.ClimateServiceController@.addClimateService"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """climateService/getAllServiceEntries/json""","""@controllers.ClimateServiceController@.getAllServiceEntries(format:String = "json")"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """climateService/addServiceEntry""","""@controllers.ClimateServiceController@.addServiceEntry"""),("""PUT""", prefix + (if(prefix.endsWith("/")) "" else "/") + """climateService/updateClimateService/id/$id<[^/]+>""","""@controllers.ClimateServiceController@.updateClimateServiceById(id:Long)"""),("""PUT""", prefix + (if(prefix.endsWith("/")) "" else "/") + """climateService/updateClimateService/name/$oldName<[^/]+>""","""@controllers.ClimateServiceController@.updateClimateServiceByName(oldName:String)"""),("""DELETE""", prefix + (if(prefix.endsWith("/")) "" else "/") + """climateService/deleteClimateService/id/$id<[^/]+>""","""@controllers.ClimateServiceController@.deleteClimateServiceById(id:Long)"""),("""DELETE""", prefix + (if(prefix.endsWith("/")) "" else "/") + """climateService/deleteClimateService/name/$name<[^/]+>""","""@controllers.ClimateServiceController@.deleteClimateServiceByName(name:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """instrument/getAllInstruments/json""","""@controllers.InstrumentController@.getAllInstruments(format:String = "json")"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """instrument/getInstrument/id/$id<[^/]+>/json""","""@controllers.InstrumentController@.getInstrument(id:Long, format:String = "json")"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """instrument/addInstrument""","""@controllers.InstrumentController@.addInstrument"""),("""PUT""", prefix + (if(prefix.endsWith("/")) "" else "/") + """instrument/updateInstrument/id/$id<[^/]+>""","""@controllers.InstrumentController@.updateInstrumentById(id:Long)"""),("""DELETE""", prefix + (if(prefix.endsWith("/")) "" else "/") + """instrument/deleteInstrument/id/$id<[^/]+>""","""@controllers.InstrumentController@.deleteInstrument(id:Long)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """dataset/getAllDatasets/json""","""@controllers.DatasetController@.getAllDatasets(format:String = "json")"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """dataset/getDataset/id/$id<[^/]+>/json""","""@controllers.DatasetController@.getDataset(id:Long, format:String = "json")"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """dataset/addDataset""","""@controllers.DatasetController@.addDataset"""),("""PUT""", prefix + (if(prefix.endsWith("/")) "" else "/") + """dataset/updateDataset/id/$id<[^/]+>""","""@controllers.DatasetController@.updateDatasetById(id:Long)"""),("""DELETE""", prefix + (if(prefix.endsWith("/")) "" else "/") + """dataset/deleteDataset/id/$id<[^/]+>""","""@controllers.DatasetController@.deleteDataset(id:Long)"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """dataset/queryDataset""","""@controllers.DatasetController@.queryDatasets"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """parameter/getAllParameters/json""","""@controllers.ParameterController@.getAllParameters(format:String = "json")"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """parameter/getParameter/service/$id<[^/]+>/name/$name<[^/]+>/json""","""@controllers.ParameterController@.getParameterByName(id:Long, name:String, format:String = "json")"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """parameter/getParameter/id/$id<[^/]+>/json""","""@controllers.ParameterController@.getParameterById(id:Long, format:String = "json")"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """parameter/addParameter""","""@controllers.ParameterController@.addParameter"""),("""PUT""", prefix + (if(prefix.endsWith("/")) "" else "/") + """parameter/updateParameter/id/$id<[^/]+>""","""@controllers.ParameterController@.updateParameterById(id:Long)"""),("""PUT""", prefix + (if(prefix.endsWith("/")) "" else "/") + """parameter/updateParameter/name/$oldName<[^/]+>""","""@controllers.ParameterController@.updateParameterByName(oldName:String)"""),("""DELETE""", prefix + (if(prefix.endsWith("/")) "" else "/") + """parameter/deleteParameter/service/$id<[^/]+>/name/$name<[^/]+>""","""@controllers.ParameterController@.deleteParameterByName(id:Long, name:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """users/$id<[^/]+>""","""@controllers.UserController@.getUser(id:Long, format:String = "json")"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """users/add""","""@controllers.UserController@.addUser"""),("""PUT""", prefix + (if(prefix.endsWith("/")) "" else "/") + """users/update/$id<[^/]+>""","""@controllers.UserController@.updateUser(id:Long)"""),("""DELETE""", prefix + (if(prefix.endsWith("/")) "" else "/") + """users/delete/$id<[^/]+>""","""@controllers.UserController@.deleteUser(id:Long)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """users/getAllUsers/json""","""@controllers.UserController@.getAllUsers(format:String = "json")"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """users/isUserValid""","""@controllers.UserController@.isUserValid"""),("""DELETE""", prefix + (if(prefix.endsWith("/")) "" else "/") + """users/delete/userName/$userName<[^/]+>/password/$password<[^/]+>""","""@controllers.UserController@.deleteUserByUserNameandPassword(userName:String, password:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""","""controllers.Assets.at(path:String = "/public", file:String)""")).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
+def documentation = List(("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """climateService/getClimateService/$name<[^/]+>/json""","""@controllers.ClimateServiceController@.getClimateService(name:String, format:String = "json")"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """climateService/getClimateService/id/$id<[^/]+>""","""@controllers.ClimateServiceController@.getClimateServiceById(id:Long)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """climateService/getAllClimateServices/json""","""@controllers.ClimateServiceController@.getAllClimateServices(format:String = "json")"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """climateService/getAllMostRecentClimateServicesByCreateTime/json""","""@controllers.ClimateServiceController@.getAllClimateServicesOrderByCreateTime(format:String = "json")"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """climateService/getAllMostRecentClimateServicesByLatestAccessTime/json""","""@controllers.ClimateServiceController@.getAllClimateServicesOrderByLatestAccessTime(format:String = "json")"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """climateService/getAllMostUsedClimateServices/json""","""@controllers.ClimateServiceController@.getAllClimateServicesOrderByCount(format:String = "json")"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """climateService/addClimateService""","""@controllers.ClimateServiceController@.addClimateService"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """climateService/getAllServiceEntries/json""","""@controllers.ClimateServiceController@.getAllServiceEntries(format:String = "json")"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """climateService/addServiceEntry""","""@controllers.ClimateServiceController@.addServiceEntry"""),("""PUT""", prefix + (if(prefix.endsWith("/")) "" else "/") + """climateService/updateClimateService/id/$id<[^/]+>""","""@controllers.ClimateServiceController@.updateClimateServiceById(id:Long)"""),("""PUT""", prefix + (if(prefix.endsWith("/")) "" else "/") + """climateService/updateClimateService/name/$oldName<[^/]+>""","""@controllers.ClimateServiceController@.updateClimateServiceByName(oldName:String)"""),("""DELETE""", prefix + (if(prefix.endsWith("/")) "" else "/") + """climateService/deleteClimateService/id/$id<[^/]+>""","""@controllers.ClimateServiceController@.deleteClimateServiceById(id:Long)"""),("""DELETE""", prefix + (if(prefix.endsWith("/")) "" else "/") + """climateService/deleteClimateService/name/$name<[^/]+>""","""@controllers.ClimateServiceController@.deleteClimateServiceByName(name:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """instrument/getAllInstruments/json""","""@controllers.InstrumentController@.getAllInstruments(format:String = "json")"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """instrument/getInstrument/id/$id<[^/]+>/json""","""@controllers.InstrumentController@.getInstrument(id:Long, format:String = "json")"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """instrument/addInstrument""","""@controllers.InstrumentController@.addInstrument"""),("""PUT""", prefix + (if(prefix.endsWith("/")) "" else "/") + """instrument/updateInstrument/id/$id<[^/]+>""","""@controllers.InstrumentController@.updateInstrumentById(id:Long)"""),("""DELETE""", prefix + (if(prefix.endsWith("/")) "" else "/") + """instrument/deleteInstrument/id/$id<[^/]+>""","""@controllers.InstrumentController@.deleteInstrument(id:Long)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """dataset/getAllDatasets/json""","""@controllers.DatasetController@.getAllDatasets(format:String = "json")"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """dataset/getDataset/id/$id<[^/]+>/json""","""@controllers.DatasetController@.getDataset(id:Long, format:String = "json")"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """dataset/addDataset""","""@controllers.DatasetController@.addDataset"""),("""PUT""", prefix + (if(prefix.endsWith("/")) "" else "/") + """dataset/updateDataset/id/$id<[^/]+>""","""@controllers.DatasetController@.updateDatasetById(id:Long)"""),("""DELETE""", prefix + (if(prefix.endsWith("/")) "" else "/") + """dataset/deleteDataset/id/$id<[^/]+>""","""@controllers.DatasetController@.deleteDataset(id:Long)"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """dataset/queryDataset""","""@controllers.DatasetController@.queryDatasets"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """parameter/getAllParameters/json""","""@controllers.ParameterController@.getAllParameters(format:String = "json")"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """parameter/getParameter/service/$id<[^/]+>/name/$name<[^/]+>/json""","""@controllers.ParameterController@.getParameterByName(id:Long, name:String, format:String = "json")"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """parameter/getParameter/id/$id<[^/]+>/json""","""@controllers.ParameterController@.getParameterById(id:Long, format:String = "json")"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """parameter/addParameter""","""@controllers.ParameterController@.addParameter"""),("""PUT""", prefix + (if(prefix.endsWith("/")) "" else "/") + """parameter/updateParameter/id/$id<[^/]+>""","""@controllers.ParameterController@.updateParameterById(id:Long)"""),("""PUT""", prefix + (if(prefix.endsWith("/")) "" else "/") + """parameter/updateParameter/name/$oldName<[^/]+>""","""@controllers.ParameterController@.updateParameterByName(oldName:String)"""),("""DELETE""", prefix + (if(prefix.endsWith("/")) "" else "/") + """parameter/deleteParameter/service/$id<[^/]+>/name/$name<[^/]+>""","""@controllers.ParameterController@.deleteParameterByName(id:Long, name:String)"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """users/add""","""@controllers.UserController@.addUser"""),("""PUT""", prefix + (if(prefix.endsWith("/")) "" else "/") + """users/update/$id<[^/]+>""","""@controllers.UserController@.updateUser(id:Long)"""),("""DELETE""", prefix + (if(prefix.endsWith("/")) "" else "/") + """users/delete/$id<[^/]+>""","""@controllers.UserController@.deleteUser(id:Long)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """users/getAllUsers/json""","""@controllers.UserController@.getAllUsers(format:String = "json")"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """users/isUserValid""","""@controllers.UserController@.isUserValid"""),("""DELETE""", prefix + (if(prefix.endsWith("/")) "" else "/") + """users/delete/userName/$userName<[^/]+>/password/$password<[^/]+>""","""@controllers.UserController@.deleteUserByUserNameandPassword(userName:String, password:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """users/$id<[^/]+>""","""@controllers.UserController@.getUser(id:Long, format:String = "json")"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """userGroup/add""","""@controllers.UserGroupController@.addUserGroup"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """userGroup/getAllUsersInGroup/$id<[^/]+>""","""@controllers.UserGroupController@.getAllUsersInGroup(id:Long, format:String = "json")"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """userGroup/getAllUserGroup/$id<[^/]+>""","""@controllers.UserGroupController@.getAllUserGroup(id:Long, format:String = "json")"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """userGroup/addUserIntoUserGroup""","""@controllers.UserGroupController@.addUserIntoUserGroup"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """userGroup/$id<[^/]+>""","""@controllers.UserGroupController@.getUserGroup(id:Long, format:String = "json")"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """friend/add""","""@controllers.FriendController@.addFriend"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """friend/delete""","""@controllers.FriendController@.deleteFriend"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """friend/isFriendValid""","""@controllers.FriendController@.isFriendValid"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """friend/$id<[^/]+>""","""@controllers.FriendController@.getFriend(id:Long, format:String = "json")"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """subscriber/add""","""@controllers.SubscriberController@.addSubscriber"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """subscriber/deleteSubscriber""","""@controllers.SubscriberController@.deleteSubscriber"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """subscriber/getSubscriberByUserId/$id<[^/]+>""","""@controllers.SubscriberController@.getSubscriberByUserId(id:Long, format:String = "json")"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """subscriber/getCollectorByUserId/$id<[^/]+>""","""@controllers.SubscriberController@.getCollectorByUserId(id:Long, format:String = "json")"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """subscriber/isSubscriberValid""","""@controllers.SubscriberController@.isSubscriberValid"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """subscriber/$id<[^/]+>""","""@controllers.SubscriberController@.getSubscriber(id:Long, format:String = "json")"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""","""controllers.Assets.at(path:String = "/public", file:String)""")).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
   case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
   case l => s ++ l.asInstanceOf[List[(String,String,String)]]
 }}
@@ -561,65 +666,185 @@ case controllers_ParameterController_deleteParameterByName30_route(params) => {
         
 
 // @LINE:49
-case controllers_UserController_getUser31_route(params) => {
-   call(params.fromPath[Long]("id", None), Param[String]("format", Right("json"))) { (id, format) =>
-        controllers_UserController_getUser31_invoker.call(play.api.Play.maybeApplication.map(_.global).getOrElse(play.api.DefaultGlobal).getControllerInstance(classOf[controllers.UserController]).getUser(id, format))
+case controllers_UserController_addUser31_route(params) => {
+   call { 
+        controllers_UserController_addUser31_invoker.call(play.api.Play.maybeApplication.map(_.global).getOrElse(play.api.DefaultGlobal).getControllerInstance(classOf[controllers.UserController]).addUser)
    }
 }
         
 
 // @LINE:50
-case controllers_UserController_addUser32_route(params) => {
-   call { 
-        controllers_UserController_addUser32_invoker.call(play.api.Play.maybeApplication.map(_.global).getOrElse(play.api.DefaultGlobal).getControllerInstance(classOf[controllers.UserController]).addUser)
+case controllers_UserController_updateUser32_route(params) => {
+   call(params.fromPath[Long]("id", None)) { (id) =>
+        controllers_UserController_updateUser32_invoker.call(play.api.Play.maybeApplication.map(_.global).getOrElse(play.api.DefaultGlobal).getControllerInstance(classOf[controllers.UserController]).updateUser(id))
    }
 }
         
 
 // @LINE:51
-case controllers_UserController_updateUser33_route(params) => {
+case controllers_UserController_deleteUser33_route(params) => {
    call(params.fromPath[Long]("id", None)) { (id) =>
-        controllers_UserController_updateUser33_invoker.call(play.api.Play.maybeApplication.map(_.global).getOrElse(play.api.DefaultGlobal).getControllerInstance(classOf[controllers.UserController]).updateUser(id))
+        controllers_UserController_deleteUser33_invoker.call(play.api.Play.maybeApplication.map(_.global).getOrElse(play.api.DefaultGlobal).getControllerInstance(classOf[controllers.UserController]).deleteUser(id))
    }
 }
         
 
 // @LINE:52
-case controllers_UserController_deleteUser34_route(params) => {
-   call(params.fromPath[Long]("id", None)) { (id) =>
-        controllers_UserController_deleteUser34_invoker.call(play.api.Play.maybeApplication.map(_.global).getOrElse(play.api.DefaultGlobal).getControllerInstance(classOf[controllers.UserController]).deleteUser(id))
+case controllers_UserController_getAllUsers34_route(params) => {
+   call(Param[String]("format", Right("json"))) { (format) =>
+        controllers_UserController_getAllUsers34_invoker.call(play.api.Play.maybeApplication.map(_.global).getOrElse(play.api.DefaultGlobal).getControllerInstance(classOf[controllers.UserController]).getAllUsers(format))
    }
 }
         
 
 // @LINE:53
-case controllers_UserController_getAllUsers35_route(params) => {
-   call(Param[String]("format", Right("json"))) { (format) =>
-        controllers_UserController_getAllUsers35_invoker.call(play.api.Play.maybeApplication.map(_.global).getOrElse(play.api.DefaultGlobal).getControllerInstance(classOf[controllers.UserController]).getAllUsers(format))
+case controllers_UserController_isUserValid35_route(params) => {
+   call { 
+        controllers_UserController_isUserValid35_invoker.call(play.api.Play.maybeApplication.map(_.global).getOrElse(play.api.DefaultGlobal).getControllerInstance(classOf[controllers.UserController]).isUserValid)
    }
 }
         
 
 // @LINE:54
-case controllers_UserController_isUserValid36_route(params) => {
-   call { 
-        controllers_UserController_isUserValid36_invoker.call(play.api.Play.maybeApplication.map(_.global).getOrElse(play.api.DefaultGlobal).getControllerInstance(classOf[controllers.UserController]).isUserValid)
+case controllers_UserController_deleteUserByUserNameandPassword36_route(params) => {
+   call(params.fromPath[String]("userName", None), params.fromPath[String]("password", None)) { (userName, password) =>
+        controllers_UserController_deleteUserByUserNameandPassword36_invoker.call(play.api.Play.maybeApplication.map(_.global).getOrElse(play.api.DefaultGlobal).getControllerInstance(classOf[controllers.UserController]).deleteUserByUserNameandPassword(userName, password))
    }
 }
         
 
 // @LINE:55
-case controllers_UserController_deleteUserByUserNameandPassword37_route(params) => {
-   call(params.fromPath[String]("userName", None), params.fromPath[String]("password", None)) { (userName, password) =>
-        controllers_UserController_deleteUserByUserNameandPassword37_invoker.call(play.api.Play.maybeApplication.map(_.global).getOrElse(play.api.DefaultGlobal).getControllerInstance(classOf[controllers.UserController]).deleteUserByUserNameandPassword(userName, password))
+case controllers_UserController_getUser37_route(params) => {
+   call(params.fromPath[Long]("id", None), Param[String]("format", Right("json"))) { (id, format) =>
+        controllers_UserController_getUser37_invoker.call(play.api.Play.maybeApplication.map(_.global).getOrElse(play.api.DefaultGlobal).getControllerInstance(classOf[controllers.UserController]).getUser(id, format))
    }
 }
         
 
 // @LINE:58
-case controllers_Assets_at38_route(params) => {
+case controllers_UserGroupController_addUserGroup38_route(params) => {
+   call { 
+        controllers_UserGroupController_addUserGroup38_invoker.call(play.api.Play.maybeApplication.map(_.global).getOrElse(play.api.DefaultGlobal).getControllerInstance(classOf[controllers.UserGroupController]).addUserGroup)
+   }
+}
+        
+
+// @LINE:59
+case controllers_UserGroupController_getAllUsersInGroup39_route(params) => {
+   call(params.fromPath[Long]("id", None), Param[String]("format", Right("json"))) { (id, format) =>
+        controllers_UserGroupController_getAllUsersInGroup39_invoker.call(play.api.Play.maybeApplication.map(_.global).getOrElse(play.api.DefaultGlobal).getControllerInstance(classOf[controllers.UserGroupController]).getAllUsersInGroup(id, format))
+   }
+}
+        
+
+// @LINE:60
+case controllers_UserGroupController_getAllUserGroup40_route(params) => {
+   call(params.fromPath[Long]("id", None), Param[String]("format", Right("json"))) { (id, format) =>
+        controllers_UserGroupController_getAllUserGroup40_invoker.call(play.api.Play.maybeApplication.map(_.global).getOrElse(play.api.DefaultGlobal).getControllerInstance(classOf[controllers.UserGroupController]).getAllUserGroup(id, format))
+   }
+}
+        
+
+// @LINE:61
+case controllers_UserGroupController_addUserIntoUserGroup41_route(params) => {
+   call { 
+        controllers_UserGroupController_addUserIntoUserGroup41_invoker.call(play.api.Play.maybeApplication.map(_.global).getOrElse(play.api.DefaultGlobal).getControllerInstance(classOf[controllers.UserGroupController]).addUserIntoUserGroup)
+   }
+}
+        
+
+// @LINE:62
+case controllers_UserGroupController_getUserGroup42_route(params) => {
+   call(params.fromPath[Long]("id", None), Param[String]("format", Right("json"))) { (id, format) =>
+        controllers_UserGroupController_getUserGroup42_invoker.call(play.api.Play.maybeApplication.map(_.global).getOrElse(play.api.DefaultGlobal).getControllerInstance(classOf[controllers.UserGroupController]).getUserGroup(id, format))
+   }
+}
+        
+
+// @LINE:65
+case controllers_FriendController_addFriend43_route(params) => {
+   call { 
+        controllers_FriendController_addFriend43_invoker.call(play.api.Play.maybeApplication.map(_.global).getOrElse(play.api.DefaultGlobal).getControllerInstance(classOf[controllers.FriendController]).addFriend)
+   }
+}
+        
+
+// @LINE:66
+case controllers_FriendController_deleteFriend44_route(params) => {
+   call { 
+        controllers_FriendController_deleteFriend44_invoker.call(play.api.Play.maybeApplication.map(_.global).getOrElse(play.api.DefaultGlobal).getControllerInstance(classOf[controllers.FriendController]).deleteFriend)
+   }
+}
+        
+
+// @LINE:67
+case controllers_FriendController_isFriendValid45_route(params) => {
+   call { 
+        controllers_FriendController_isFriendValid45_invoker.call(play.api.Play.maybeApplication.map(_.global).getOrElse(play.api.DefaultGlobal).getControllerInstance(classOf[controllers.FriendController]).isFriendValid)
+   }
+}
+        
+
+// @LINE:68
+case controllers_FriendController_getFriend46_route(params) => {
+   call(params.fromPath[Long]("id", None), Param[String]("format", Right("json"))) { (id, format) =>
+        controllers_FriendController_getFriend46_invoker.call(play.api.Play.maybeApplication.map(_.global).getOrElse(play.api.DefaultGlobal).getControllerInstance(classOf[controllers.FriendController]).getFriend(id, format))
+   }
+}
+        
+
+// @LINE:71
+case controllers_SubscriberController_addSubscriber47_route(params) => {
+   call { 
+        controllers_SubscriberController_addSubscriber47_invoker.call(play.api.Play.maybeApplication.map(_.global).getOrElse(play.api.DefaultGlobal).getControllerInstance(classOf[controllers.SubscriberController]).addSubscriber)
+   }
+}
+        
+
+// @LINE:72
+case controllers_SubscriberController_deleteSubscriber48_route(params) => {
+   call { 
+        controllers_SubscriberController_deleteSubscriber48_invoker.call(play.api.Play.maybeApplication.map(_.global).getOrElse(play.api.DefaultGlobal).getControllerInstance(classOf[controllers.SubscriberController]).deleteSubscriber)
+   }
+}
+        
+
+// @LINE:73
+case controllers_SubscriberController_getSubscriberByUserId49_route(params) => {
+   call(params.fromPath[Long]("id", None), Param[String]("format", Right("json"))) { (id, format) =>
+        controllers_SubscriberController_getSubscriberByUserId49_invoker.call(play.api.Play.maybeApplication.map(_.global).getOrElse(play.api.DefaultGlobal).getControllerInstance(classOf[controllers.SubscriberController]).getSubscriberByUserId(id, format))
+   }
+}
+        
+
+// @LINE:74
+case controllers_SubscriberController_getCollectorByUserId50_route(params) => {
+   call(params.fromPath[Long]("id", None), Param[String]("format", Right("json"))) { (id, format) =>
+        controllers_SubscriberController_getCollectorByUserId50_invoker.call(play.api.Play.maybeApplication.map(_.global).getOrElse(play.api.DefaultGlobal).getControllerInstance(classOf[controllers.SubscriberController]).getCollectorByUserId(id, format))
+   }
+}
+        
+
+// @LINE:75
+case controllers_SubscriberController_isSubscriberValid51_route(params) => {
+   call { 
+        controllers_SubscriberController_isSubscriberValid51_invoker.call(play.api.Play.maybeApplication.map(_.global).getOrElse(play.api.DefaultGlobal).getControllerInstance(classOf[controllers.SubscriberController]).isSubscriberValid)
+   }
+}
+        
+
+// @LINE:76
+case controllers_SubscriberController_getSubscriber52_route(params) => {
+   call(params.fromPath[Long]("id", None), Param[String]("format", Right("json"))) { (id, format) =>
+        controllers_SubscriberController_getSubscriber52_invoker.call(play.api.Play.maybeApplication.map(_.global).getOrElse(play.api.DefaultGlobal).getControllerInstance(classOf[controllers.SubscriberController]).getSubscriber(id, format))
+   }
+}
+        
+
+// @LINE:79
+case controllers_Assets_at53_route(params) => {
    call(Param[String]("path", Right("/public")), params.fromPath[String]("file", None)) { (path, file) =>
-        controllers_Assets_at38_invoker.call(controllers.Assets.at(path, file))
+        controllers_Assets_at53_invoker.call(controllers.Assets.at(path, file))
    }
 }
         

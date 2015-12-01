@@ -23,7 +23,9 @@ import play.data.Form;
 import play.mvc.*;
 import util.APICall;
 import util.APICall.ResponseType;
-import views.html.climate.*;
+import views.html.climate.bugReporting;
+import views.html.climate.bugs;
+
 import java.util.*;
 
 public class BugReportController extends Controller {

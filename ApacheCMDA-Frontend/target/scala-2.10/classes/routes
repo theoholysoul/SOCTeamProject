@@ -11,7 +11,6 @@ GET     /application                           controllers.Application.index()
 
 
 # Login page
-
 #GET     /signin                     controllers.UserController.signIn()
 #POST    /signin                     controllers.UserController.authenticate()
 #GET     /signout                    controllers.UserController.signOut()
@@ -48,14 +47,44 @@ POST		/climate/download/climateServices					controllers.ClimateServiceController
 POST		/climate/edit/climateServices						controllers.ClimateServiceController.editClimateService()
 GET			/climate/new/climateServices						controllers.ClimateServiceController.addClimateServices()
 GET			/climate/oneService									controllers.ClimateServiceController.oneService(url ?= null)
+
+#Workflow
+GET         /workflow/createWorkflow                            controllers.WorkflowController.createWorkflow()
+GET         /workflows                                          controllers.WorkflowController.workflows()
+GET         /workflow/workflowCreating                          controllers.WorkflowController.handleCreateWorkflow()
+GET         /workflow/linkTags                                  controllers.WorkflowController.linkTags()
+GET         /workflow/disWorkflow                               controllers.WorkflowController.displayWorkflow(id: Long)
+
+# Tag Model
+GET			/tag											controllers.TagController.home(email ?= null, vfile ?= null, dataset ?= null)
+GET			/tag/tags							            controllers.TagController.tags()
+GET			/tag/oneService									controllers.TagController.oneService(url ?= null)
+
+
 #Keyword search
 GET 		/climate/datasets									controllers.DatasetController.datasetList()
 GET			/climate/searchDataSet 					 			controllers.DatasetController.searchDataset()
 GET 		/climate/getSearchResult				 			controllers.DatasetController.getSearchResult()
 
 #User Profiles
-GET 		/users/all									        controllers.UserController.profile()
-GET 		/users/:userId									    controllers.UserController.oneUser(userId : Long)
+GET 		/users/myProfile									controllers.UserController.profile()
+GET 		/users/allUsers									    controllers.UserController.allUsers()
+GET 		/users/signUpForm									controllers.UserController.signUpForm()
+GET 		/users/signUp									    controllers.UserController.signUp()
+GET 		/users/signInForm									controllers.UserController.signInForm()
+GET 		/users/signIn									    controllers.UserController.signIn()
+GET 		/users/signOut									    controllers.UserController.signOut()
+GET 		/users/friends									    controllers.UserController.showFriends()
+GET 		/users/addfriend									controllers.UserController.addFriend(userId : Long, isSubscribe : Boolean)
+GET 		/users/deletefriend									controllers.UserController.deleteFriend(userId : Long, isSubscribe : Boolean)
+GET 		/users/addSubscribe									controllers.UserController.addSubscribe(userId : Long, isFriend : Boolean)
+GET 		/users/deleteSubscribe							    controllers.UserController.deleteSubscribe(userId : Long, isFriend : Boolean)
+GET 		/users/subscriptions							    controllers.UserController.showSubscriptions()
+GET 		/users/account/:userId							    controllers.UserController.oneUser(userId : Long)
+GET 		/usergroups/all							            controllers.UserGroupController.showGroups()
+GET 		/usergroups/addGroup							    controllers.UserGroupController.newGroup()
+GET 		/usergroups/addGroupForm							controllers.UserGroupController.newGroupForm()
+GET 		/usergroups/:userGroupId							controllers.UserGroupController.oneGroup(userGroupId : Long)
 
 #Map static resources from the /public folder to the /assets URL path
 GET     	/assets/*file               						controllers.Assets.at(path="/public", file)

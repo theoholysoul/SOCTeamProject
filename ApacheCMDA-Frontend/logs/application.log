@@ -1,18 +1,18 @@
-2015-11-07 01:20:37,231 - [INFO] - from play in pool-4-thread-1 
+2015-11-30 16:04:41,970 - [INFO] - from play in pool-4-thread-5 
 Listening for HTTP on /0:0:0:0:0:0:0:0:9000
 
-2015-11-07 01:21:45,976 - [INFO] - from play in play-internal-execution-context-1 
+2015-11-30 16:05:22,076 - [INFO] - from play in play-internal-execution-context-1 
 datasource [jdbc:h2:file:data/db;DB_CLOSE_DELAY=-1] bound to JNDI as DefaultDS
 
-2015-11-07 01:21:46,495 - [INFO] - from play in play-internal-execution-context-1 
+2015-11-30 16:05:26,714 - [INFO] - from play in play-internal-execution-context-1 
 database [default] connected at jdbc:h2:file:data/db
 
-2015-11-07 01:21:50,450 - [INFO] - from play in play-internal-execution-context-1 
+2015-11-30 16:05:30,524 - [INFO] - from play in play-internal-execution-context-1 
 Application started (Dev)
 
-2015-11-07 01:22:01,695 - [INFO] - from application in play-akka.actor.default-dispatcher-6 
-http://localhost:9034/users/getAllUsers/json
+2015-11-30 16:06:06,495 - [INFO] - from application in play-akka.actor.default-dispatcher-5 
+http://localhost:9034/workflow/getAllWorkflows/json
 
-2015-11-07 01:23:37,423 - [INFO] - from application in play-akka.actor.default-dispatcher-8 
-http://localhost:9034/users/110
+2015-11-30 16:06:09,580 - [INFO] - from application in play-akka.actor.default-dispatcher-11 
+http://localhost:9034/tag/getAllTags/json
 

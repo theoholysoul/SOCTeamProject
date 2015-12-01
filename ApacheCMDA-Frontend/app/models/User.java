@@ -17,83 +17,163 @@
 package models;
 
 import com.fasterxml.jackson.databind.JsonNode;
-import play.data.validation.Constraints;
-import play.data.validation.ValidationError;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import util.APICall;
 import util.Constants;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class User {
 
 	private static final String GET_ALL_USER = Constants.NEW_BACKEND + "users/getAllUsers/json";
+	private static final String GET_ALL_FRIENDS = Constants.NEW_BACKEND + "friend/";
+	private static final String GET_ALL_SUBSCRIBE = Constants.NEW_BACKEND + "subscriber/getSubscriberByUserId/";
 	private static final String GET_ONE_USER = Constants.NEW_BACKEND + "users/";
+	private static final String ADD_NEW_USER = Constants.NEW_BACKEND + "users/add";
+	private static final String HAS_USER = Constants.NEW_BACKEND + "users/isUserValid";
+	private static final String GET_ISFRIEND = Constants.NEW_BACKEND + "friend/isFriendValid";
+	private static final String ADD_FRIEND = Constants.NEW_BACKEND + "friend/add";
+	private static final String DELETE_FRIEND = Constants.NEW_BACKEND + "friend/delete";
+
+	private static final String ADD_SUBSCRIBE = Constants.NEW_BACKEND + "subscriber/add";
+	private static final String DELETE_SUBSCRIBE = Constants.NEW_BACKEND + "subscriber/deleteSubscriber";
+	private static final String GET_ISSUBSCRIBE = Constants.NEW_BACKEND + "subscriber/isSubscriberValid";
 
 	public long id;
 	public String userName;
 	public String firstName;
 	public String lastName;
 	public String affiliation;
+	public String phoneNumber;
+	public String researchFields;
 	public String email;
 	public String password;
 	public String description;
 
-/*
-	@Id
-	@Constraints.Min(10)
-	public long id;
-
-	@Constraints.Required(groups = { SignIn.class, SignUp.class, Update.class })
-	public String password;
-
-	@Constraints.Email
-	@Column(unique = true)
-	@Constraints.Required(groups = { SignIn.class, SignUp.class, Update.class })
-	public String email;
-
-	private String userName;
-	@Constraints.Required
-	private String firstName;
-	@Constraints.Required
-	private String lastName;
-	private String middleInitial;
-	private String affiliation;
-	private String title;
-
-
-	private String mailingAddress;
-	private String phoneNumber;
-	private String faxNumber;
-	private String researchFields;
-	private String highestDegree;
-
-	// @OneToMany(mappedBy = "user", cascade={CascadeType.ALL})
-	// private Set<ClimateService> climateServices = new
-	// HashSet<ClimateService>();
-*/
 	public User() {
+
 	}
 
 	public static User getUser(long userId) {
-
 		JsonNode json = APICall.callAPI(GET_ONE_USER + userId);
+		return getUser(json);
+	}
 
-		User user = new User();
-		user.id = json.get("id").asInt();
-		//System.out.println("here");
-		user.userName = getField(json, "userName");
-		user.firstName = getField(json, "firstName");
-		user.lastName = getField(json, "lastName");
-		user.affiliation = getField(json, "affiliation");
-		user.email = getField(json, "email");
-		user.password = getField(json, "password");
-		user.description = getField(json, "description");
+	public static List<User> getFriends(String userId) {
+		List<User> users = new ArrayList<User>();
 
-		return user;
+		JsonNode userNode = APICall.callAPI(GET_ALL_FRIENDS + userId);
+
+		if (userNode == null || userNode.has("error")
+				|| !userNode.isArray()) {
+			return users;
+		}
+
+		for (int i = 0; i < userNode.size(); i++) {
+			JsonNode json = userNode.path(i);
+			User user = getUser(json);
+			users.add(user);
+		}
+		return users;
+	}
+
+	public static void addFriend(String userId1, String userId2) {
+		ObjectMapper mapper = new ObjectMapper();
+		ObjectNode queryJson = mapper.createObjectNode();
+
+		queryJson.put("user1Id", userId1);
+		queryJson.put("user2Id", userId2);
+		System.out.println("addFriending");
+
+		JsonNode dataSetNode = APICall.postAPI(ADD_FRIEND, queryJson);
+		System.out.println("add friend response: "+dataSetNode);
+	}
+
+	public static void deleteFriend(String userId1, String userId2) {
+		ObjectMapper mapper = new ObjectMapper();
+		ObjectNode queryJson = mapper.createObjectNode();
+
+		queryJson.put("user1Id", userId1);
+		queryJson.put("user2Id", userId2);
+
+		JsonNode dataSetNode = APICall.postAPI(DELETE_FRIEND, queryJson);
+
+	}
+
+	public static boolean isFriend(String userId1, String userId2) {
+		ObjectMapper mapper = new ObjectMapper();
+		ObjectNode queryJson = mapper.createObjectNode();
+
+		queryJson.put("user1Id", userId1);
+		queryJson.put("user2Id", userId2);
+
+		JsonNode dataSetNode = APICall.postAPI(GET_ISFRIEND, queryJson);
+
+		if (dataSetNode == null || dataSetNode.has("error")) {
+			return false;
+		}
+		else {
+			System.out.println("isFriend value "+dataSetNode.asText());
+			return dataSetNode.asText().trim().equals("1");
+		}
+	}
+
+	public static void addSubscribe(String fromId1, String toId2) {
+		ObjectMapper mapper = new ObjectMapper();
+		ObjectNode queryJson = mapper.createObjectNode();
+
+		queryJson.put("fromUserId", fromId1);
+		queryJson.put("toUserId", toId2);
+
+		JsonNode dataSetNode = APICall.postAPI(ADD_SUBSCRIBE, queryJson);
+	}
+
+	public static void deleteSubscribe(String fromId1, String toId2) {
+		ObjectMapper mapper = new ObjectMapper();
+		ObjectNode queryJson = mapper.createObjectNode();
+
+		queryJson.put("fromUserId", fromId1);
+		queryJson.put("toUserId", toId2);
+
+		JsonNode dataSetNode = APICall.postAPI(DELETE_SUBSCRIBE, queryJson);
+	}
+
+	public static boolean isSubscribed(String fromId1, String toId2) {
+		ObjectMapper mapper = new ObjectMapper();
+		ObjectNode queryJson = mapper.createObjectNode();
+
+		queryJson.put("fromUserId", fromId1);
+		queryJson.put("toUserId", toId2);
+
+		JsonNode dataSetNode = APICall.postAPI(GET_ISSUBSCRIBE, queryJson);
+
+		if (dataSetNode == null || dataSetNode.has("error")) {
+			return false;
+		}
+		else {
+			System.out.println("isSubscribed value "+dataSetNode.asText());
+			return dataSetNode.asText().trim().equals("1");
+		}
+	}
+
+	public static List<User> getSubscriptions(String userId) {
+		List<User> users = new ArrayList<User>();
+
+		JsonNode userNode = APICall.callAPI(GET_ALL_SUBSCRIBE + userId);
+
+		if (userNode == null || userNode.has("error")
+				|| !userNode.isArray()) {
+			return users;
+		}
+
+		for (int i = 0; i < userNode.size(); i++) {
+			JsonNode json = userNode.path(i);
+			User user = getUser(json);
+			users.add(user);
+		}
+		return users;
 	}
 
 	public static List<User> all() {
@@ -109,19 +189,56 @@ public class User {
 
 		for (int i = 0; i < userNode.size(); i++) {
 			JsonNode json = userNode.path(i);
-			User user = new User();
-			user.id = json.get("id").asLong();
-			//System.out.println("here");
-			user.userName = getField(json, "userName");
-			user.firstName = getField(json, "firstName");
-			user.lastName = getField(json, "lastName");
-			user.affiliation = getField(json, "affiliation");
-			user.email = getField(json, "email");
-			user.password = getField(json, "password");
-			user.description = getField(json, "description");
+			User user = getUser(json);
 			users.add(user);
 		}
 		return users;
+	}
+
+	public static boolean signUp(User user) {
+		ObjectMapper mapper = new ObjectMapper();
+		ObjectNode queryJson = mapper.createObjectNode();
+
+		queryJson.put("userName", user.userName);
+		queryJson.put("firstName", user.firstName);
+		queryJson.put("lastName", user.lastName);
+		queryJson.put("affiliation", user.affiliation);
+		queryJson.put("phoneNumber", user.phoneNumber);
+		queryJson.put("researchFields", user.researchFields);
+		queryJson.put("email", user.email);
+		queryJson.put("password", user.password);
+		queryJson.put("description", user.description);
+
+		JsonNode dataSetNode = APICall.postAPI(ADD_NEW_USER, queryJson);
+
+		if (dataSetNode == null || dataSetNode.has("error")) {
+			System.out.println("user creating failed: "+dataSetNode.toString());
+			return false;
+		}
+		return true;
+	}
+
+	public static String signIn(User user) {
+		ObjectMapper mapper = new ObjectMapper();
+		ObjectNode queryJson = mapper.createObjectNode();
+
+		queryJson.put("email", user.email);
+		System.out.println("email: " + user.email);
+		queryJson.put("password", user.password);
+		System.out.println("password: " + user.password);
+		System.out.println("Calling!");
+
+		JsonNode dataSetNode = APICall.postAPI(HAS_USER, queryJson);
+		System.out.println("dataSetNode: "+dataSetNode.toString());
+
+		if (dataSetNode == null || dataSetNode.has("error")) {
+			System.out.println("User Null");
+			return "";
+		}
+		else {
+			System.out.println("User "+dataSetNode.asText());
+			return dataSetNode.asText();
+		}
 	}
 
 	public static String getField(JsonNode node, String fieldName) {
@@ -132,192 +249,22 @@ public class User {
 			return "";
 		}
 	}
-	/*
-	public User(String userName, String password, String firstName,
-			String lastName, String middleInitial, String affiliation,
-			String title, String email, String mailingAddress,
-			String phoneNumber, String faxNumber, String researchFields,
-			String highestDegree) {
-		super();
-		this.userName = userName;
-		this.password = password;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.middleInitial = middleInitial;
-		this.affiliation = affiliation;
-		this.title = title;
-		this.email = email;
-		this.mailingAddress = mailingAddress;
-		this.phoneNumber = phoneNumber;
-		this.faxNumber = faxNumber;
-		this.researchFields = researchFields;
-		this.highestDegree = highestDegree;
+
+	public static User getUser(JsonNode json) {
+		User user = new User();
+		user.id = json.get("id").asLong();
+		user.userName = getField(json, "userName");
+		user.firstName = getField(json, "firstName");
+		user.lastName = getField(json, "lastName");
+		user.affiliation = getField(json, "affiliation");
+		user.email = getField(json, "email");
+		user.password = getField(json, "password");
+		user.description = getField(json, "description");
+		user.phoneNumber = getField(json, "phoneNumber");
+		user.researchFields = getField(json, "researchFields");
+		return user;
 	}
 
-	public long getId() {
-		return id;
-	}
 
-	public String getUserName() {
-		return userName;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public String getFirstName() {
-		return firstName;
-	}
-
-	public String getLastName() {
-		return lastName;
-	}
-
-	public String getMiddleInitial() {
-		return middleInitial;
-	}
-
-	public String getAffiliation() {
-		return affiliation;
-	}
-
-	public String getTitle() {
-		return title;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public String getMailingAddress() {
-		return mailingAddress;
-	}
-
-	public String getPhoneNumber() {
-		return phoneNumber;
-	}
-
-	public String getFaxNumber() {
-		return faxNumber;
-	}
-
-	public String getResearchFields() {
-		return researchFields;
-	}
-
-	public String getHighestDegree() {
-		return highestDegree;
-	}
-	
-	public void setId(long id) {
-		this.id = id;
-	}
-
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-
-	public void setMiddleInitial(String middleInitial) {
-		this.middleInitial = middleInitial;
-	}
-
-	public void setAffiliation(String affiliation) {
-		this.affiliation = affiliation;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public void setMailingAddress(String mailingAddress) {
-		this.mailingAddress = mailingAddress;
-	}
-
-	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
-	}
-
-	public void setFaxNumber(String faxNumber) {
-		this.faxNumber = faxNumber;
-	}
-
-	public void setResearchFields(String researchFields) {
-		this.researchFields = researchFields;
-	}
-
-	public void setHighestDegree(String highestDegree) {
-		this.highestDegree = highestDegree;
-	}
-
-	public static Finder<Long, User> find = new Finder<Long, User>(
-			Long.class, User.class
-	);
-
-	public static User byEmail(String email) {
-		return find.where()
-				.eq("email", email)
-				.findUnique();
-	}
-
-	public static User byEmailAndPassword(String email, String password) {
-		return find.where()
-				.eq("email", email)
-				.eq("password", password)
-				.findUnique();
-	}
-
-	public List<ValidationError> validate(Class group) {
-		List<ValidationError> errors = new ArrayList<ValidationError>();
-
-		if (group == SignIn.class) {
-			User user = byEmailAndPassword(email, password);
-
-			if (user == null) {
-				errors.add(new ValidationError("", "Invalid email or password."));
-			}
-		} else if (group == SignUp.class) {
-			if (User.byEmail(email) != null) {
-				errors.add(new ValidationError("email", "This email is already registered."));
-			}
-		}
-
-		return errors.isEmpty() ? null : errors;
-	}
-
-	@Override
-	public String toString() {
-		return "User [id=" + id + ", userName=" + userName + ", password="
-				+ password + ", firstName=" + firstName + ", lastName="
-				+ lastName + ", middleInitial=" + middleInitial
-				+ ", affiliation=" + affiliation + ", title=" + title
-				+ ", email=" + email + ", mailingAddress=" + mailingAddress
-				+ ", phoneNumber=" + phoneNumber + ", faxNumber=" + faxNumber
-				+ ", researchFields=" + researchFields + ", highestDegree="
-				+ highestDegree + "]";
-	}
-
-	public interface SignIn { }
-
-	public interface SignUp { }
-
-	public interface Update { }
-	*/
 }
 

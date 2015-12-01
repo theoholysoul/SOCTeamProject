@@ -90,34 +90,30 @@ Seq[Any](format.raw/*18.53*/("""
 			<th style = "vertical-align: top;" class="col-md-1">Last Name</th>
 			<th style = "vertical-align: top;" class="col-md-2">Affiliation</th>
 			<th style = "vertical-align: top;" class="col-md-1">Email</th>
-			<th style = "vertical-align: top;" class="col-md-1">Password</th>
 
 		</tr>
 		</thead>
 		<tbody>
-		"""),_display_(Seq[Any](/*55.4*/for(user <- users) yield /*55.22*/{_display_(Seq[Any](format.raw/*55.23*/("""
+		"""),_display_(Seq[Any](/*54.4*/for(user <- users) yield /*54.22*/{_display_(Seq[Any](format.raw/*54.23*/("""
 		<tr>
 
-			<td><font size="2">"""),_display_(Seq[Any](/*58.24*/user/*58.28*/.id)),format.raw/*58.31*/("""</font></td>
+			<td><font size="2">"""),_display_(Seq[Any](/*57.24*/user/*57.28*/.id)),format.raw/*57.31*/("""</font></td>
 
-			<td><a href = """"),_display_(Seq[Any](/*60.20*/{routes.UserController.oneUser(user.id)})),format.raw/*60.60*/(""""><font size="2">"""),_display_(Seq[Any](/*60.78*/user/*60.82*/.userName)),format.raw/*60.91*/("""</font></a></td>
+			<td><a href = """"),_display_(Seq[Any](/*59.20*/{routes.UserController.oneUser(user.id)})),format.raw/*59.60*/(""""><font size="2">"""),_display_(Seq[Any](/*59.78*/user/*59.82*/.userName)),format.raw/*59.91*/("""</font></a></td>
 
-			<td><font size="2">"""),_display_(Seq[Any](/*62.24*/user/*62.28*/.firstName)),format.raw/*62.38*/("""</font></td>
-			<td><font size="2">"""),_display_(Seq[Any](/*63.24*/user/*63.28*/.lastName)),format.raw/*63.37*/("""</font></td>
-			<td><font size="2">"""),_display_(Seq[Any](/*64.24*/user/*64.28*/.affiliation)),format.raw/*64.40*/("""</font></td>
-			<td><font size="2">"""),_display_(Seq[Any](/*65.24*/user/*65.28*/.email)),format.raw/*65.34*/("""</font></td>
-			<td><font size="2">"""),_display_(Seq[Any](/*66.24*/user/*66.28*/.password)),format.raw/*66.37*/("""</font></td>
+			<td><font size="2">"""),_display_(Seq[Any](/*61.24*/user/*61.28*/.firstName)),format.raw/*61.38*/("""</font></td>
+			<td><font size="2">"""),_display_(Seq[Any](/*62.24*/user/*62.28*/.lastName)),format.raw/*62.37*/("""</font></td>
+			<td><font size="2">"""),_display_(Seq[Any](/*63.24*/user/*63.28*/.affiliation)),format.raw/*63.40*/("""</font></td>
+			<td><font size="2">"""),_display_(Seq[Any](/*64.24*/user/*64.28*/.email)),format.raw/*64.34*/("""</font></td>
 
 		</tr>
 
-		""")))})),format.raw/*70.4*/("""
+		""")))})),format.raw/*68.4*/("""
 		</tbody>
 	</table>
 
-
-
 </div>
-""")))})),format.raw/*77.2*/("""
+""")))})),format.raw/*73.2*/("""
 """))}
     }
     
@@ -130,11 +126,11 @@ Seq[Any](format.raw/*18.53*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Sat Nov 07 00:58:59 UTC 2015
-                    SOURCE: /home/SOC-Fall-2015/Dev/SOC-Fall-2015/ApacheCMDA-Frontend/app/views/climate/userList.scala.html
-                    HASH: 42b963aea3557f376262eb4c809e413b7c8dce9b
-                    MATRIX: 3175->1189|3320->1261|3335->1268|3420->1272|3471->1287|3486->1293|3548->1333|3649->1406|3678->1407|3736->1438|3764->1439|3819->1240|3848->1259|3876->1454|3914->1457|3949->1483|3989->1485|4027->1488|4064->1503|4121->1525|4135->1530|4164->1537|4885->2223|4919->2241|4958->2242|5026->2274|5039->2278|5064->2281|5133->2314|5195->2354|5249->2372|5262->2376|5293->2385|5370->2426|5383->2430|5415->2440|5487->2476|5500->2480|5531->2489|5603->2525|5616->2529|5650->2541|5722->2577|5735->2581|5763->2587|5835->2623|5848->2627|5879->2636|5936->2662|6000->2695
-                    LINES: 56->18|59->22|59->22|61->22|62->23|62->23|62->23|64->25|64->25|66->27|66->27|69->18|71->21|72->29|74->31|74->31|74->31|76->33|76->33|79->36|79->36|79->36|98->55|98->55|98->55|101->58|101->58|101->58|103->60|103->60|103->60|103->60|103->60|105->62|105->62|105->62|106->63|106->63|106->63|107->64|107->64|107->64|108->65|108->65|108->65|109->66|109->66|109->66|113->70|120->77
+                    DATE: Mon Nov 30 16:01:41 PST 2015
+                    SOURCE: /Users/vincent/Desktop/SoC/Lab/SOC-Fall-2015/ApacheCMDA-Frontend/app/views/climate/userList.scala.html
+                    HASH: e8e596fe7e7fd2cfca1ab427f25e21fcdd01a6c5
+                    MATRIX: 3175->1189|3320->1261|3335->1268|3420->1272|3471->1287|3486->1293|3548->1333|3649->1406|3678->1407|3736->1438|3764->1439|3819->1240|3848->1259|3876->1454|3914->1457|3949->1483|3989->1485|4027->1488|4064->1503|4121->1525|4135->1530|4164->1537|4816->2154|4850->2172|4889->2173|4957->2205|4970->2209|4995->2212|5064->2245|5126->2285|5180->2303|5193->2307|5224->2316|5301->2357|5314->2361|5346->2371|5418->2407|5431->2411|5462->2420|5534->2456|5547->2460|5581->2472|5653->2508|5666->2512|5694->2518|5751->2544|5813->2575
+                    LINES: 56->18|59->22|59->22|61->22|62->23|62->23|62->23|64->25|64->25|66->27|66->27|69->18|71->21|72->29|74->31|74->31|74->31|76->33|76->33|79->36|79->36|79->36|97->54|97->54|97->54|100->57|100->57|100->57|102->59|102->59|102->59|102->59|102->59|104->61|104->61|104->61|105->62|105->62|105->62|106->63|106->63|106->63|107->64|107->64|107->64|111->68|116->73
                     -- GENERATED --
                 */
             
