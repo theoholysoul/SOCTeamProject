@@ -1,75 +1,41 @@
-2015-11-30 16:55:43,134 - [INFO] - from play in pool-5-thread-3 
-Listening for HTTP on /0:0:0:0:0:0:0:0:9000
+2015-12-01 13:47:09,632 - [INFO] - from play in pool-4-thread-3 
+Listening for HTTP on /0:0:0:0:0:0:0:0:8888
 
-2015-11-30 16:56:17,441 - [INFO] - from play in play-internal-execution-context-1 
+2015-12-01 13:48:13,882 - [ERROR] - from application in New I/O worker #1 
+
+
+! @6oag31ke3 - Internal server error, for (GET) [/] ->
+
+play.PlayExceptions$CompilationException: Compilation error[error: cannot find symbol]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library-2.10.3.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:298) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library-2.10.3.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:298) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:296) ~[na:na]
+	at scala.util.Either$LeftProjection.map(Either.scala:377) ~[scala-library-2.10.3.jar:na]
+	at play.PlayReloader$$anon$1.reload(PlayReloader.scala:296) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:104) ~[play_2.10-2.2.3.jar:2.2.3]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:102) ~[play_2.10-2.2.3.jar:2.2.3]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library-2.10.3.jar:na]
+
+2015-12-01 13:48:13,993 - [WARN] - from play in New I/O worker #1 
+No application found at invoker init
+
+2015-12-01 13:51:04,818 - [INFO] - from play in play-internal-execution-context-1 
 datasource [jdbc:h2:file:data/db;DB_CLOSE_DELAY=-1] bound to JNDI as DefaultDS
 
-2015-11-30 16:56:17,693 - [INFO] - from play in play-internal-execution-context-1 
+2015-12-01 13:51:05,169 - [INFO] - from play in play-internal-execution-context-1 
 database [default] connected at jdbc:h2:file:data/db
 
-2015-11-30 16:56:18,761 - [INFO] - from play in play-internal-execution-context-1 
+2015-12-01 13:51:06,675 - [INFO] - from play in play-internal-execution-context-1 
 Application started (Dev)
-
-2015-11-30 16:56:19,058 - [INFO] - from application in play-akka.actor.default-dispatcher-8 
-http://localhost:9034/workflow/getTop10WorkflowByViewCount/json
-
-2015-11-30 16:56:24,526 - [INFO] - from application in play-akka.actor.default-dispatcher-9 
-http://localhost:9034/workflow/getWorkflow/id/3
-
-2015-11-30 16:56:24,658 - [INFO] - from application in play-akka.actor.default-dispatcher-9 
-http://localhost:9034/workflow/updateViewCount/3
-
-2015-11-30 16:56:27,403 - [INFO] - from application in play-akka.actor.default-dispatcher-10 
-http://localhost:9034/workflow/getTop10WorkflowByViewCount/json
-
-2015-11-30 16:56:29,758 - [INFO] - from application in play-akka.actor.default-dispatcher-10 
-http://localhost:9034/workflow/getWorkflow/id/4
-
-2015-11-30 16:56:29,851 - [INFO] - from application in play-akka.actor.default-dispatcher-10 
-http://localhost:9034/workflow/updateViewCount/4
-
-2015-11-30 16:56:32,484 - [INFO] - from application in play-akka.actor.default-dispatcher-7 
-http://localhost:9034/workflow/getTop10WorkflowByViewCount/json
-
-2015-11-30 16:59:33,395 - [INFO] - from application in play-akka.actor.default-dispatcher-17 
-http://localhost:9034/workflow/getAllWorkflows/json
-
-2015-11-30 17:10:56,867 - [INFO] - from application in play-akka.actor.default-dispatcher-12 
-http://localhost:9034/workflow/getAllWorkflows/json
-
-2015-11-30 17:12:42,662 - [INFO] - from application in play-akka.actor.default-dispatcher-26 
-http://localhost:9034/workflow/getAllWorkflows/json
-
-2015-11-30 17:14:36,376 - [INFO] - from application in play-akka.actor.default-dispatcher-42 
-http://localhost:9034/climateService/getAllClimateServices/json
-
-2015-11-30 17:15:24,670 - [INFO] - from application in play-akka.actor.default-dispatcher-43 
-http://localhost:9034/climateService/getAllClimateServices/json
-
-2015-11-30 17:15:32,460 - [INFO] - from application in play-akka.actor.default-dispatcher-42 
-http://localhost:9034/dataset/getAllDatasets/json
-
-2015-11-30 17:19:45,542 - [INFO] - from application in play-akka.actor.default-dispatcher-43 
-http://localhost:9034/climateService/getAllClimateServices/json
-
-2015-11-30 17:20:10,002 - [INFO] - from application in play-akka.actor.default-dispatcher-54 
-http://localhost:9034/dataset/getAllDatasets/json
-
-2015-11-30 17:21:13,217 - [INFO] - from application in play-akka.actor.default-dispatcher-53 
-http://localhost:9034/workflow/getAllWorkflows/json
-
-2015-11-30 17:21:17,942 - [INFO] - from application in play-akka.actor.default-dispatcher-56 
-http://localhost:9034/tag/getAllTags/json
-
-2015-11-30 17:21:20,955 - [INFO] - from application in play-akka.actor.default-dispatcher-61 
-http://localhost:9034/workflow/getTop10WorkflowByViewCount/json
-
-2015-11-30 17:21:23,468 - [INFO] - from application in play-akka.actor.default-dispatcher-58 
-http://localhost:9034/workflow/getTop10WorkflowByViewCount/json
-
-2015-11-30 17:21:29,521 - [INFO] - from application in play-akka.actor.default-dispatcher-59 
-http://localhost:9034/workflow/getAllWorkflows/json
-
-2015-11-30 17:23:34,231 - [INFO] - from application in play-akka.actor.default-dispatcher-56 
-http://localhost:9034/workflow/getTop10WorkflowByViewCount/json
 

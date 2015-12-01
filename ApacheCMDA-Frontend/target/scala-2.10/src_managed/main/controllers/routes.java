@@ -1,6 +1,6 @@
-// @SOURCE:/Users/Ethan/Desktop/teamMerge/SOC-Fall-2015-Team18-Lead-Xin-Wan/ApacheCMDA-Frontend/conf/routes
-// @HASH:99477154ac47421945f2a2e655bb598b0f7fe178
-// @DATE:Mon Nov 30 16:55:54 PST 2015
+// @SOURCE:/Users/Holysoul/Desktop/SOCTeamProject/ApacheCMDA-Frontend/conf/routes
+// @HASH:8b62dcb11ec977f4c64b0562b5a1bad2f2b6db50
+// @DATE:Tue Dec 01 13:47:27 PST 2015
 
 package controllers;
 
