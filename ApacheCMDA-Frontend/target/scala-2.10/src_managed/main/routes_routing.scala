@@ -1,6 +1,6 @@
-// @SOURCE:/Users/vincent/Desktop/SoC/Lab/SOC-Fall-2015/ApacheCMDA-Frontend/conf/routes
-// @HASH:a398b3442955710b032ab2d6669ccd493d7e6838
-// @DATE:Mon Nov 30 16:01:32 PST 2015
+// @SOURCE:/Users/Ethan/Desktop/teamMerge/SOC-Fall-2015-Team18-Lead-Xin-Wan/ApacheCMDA-Frontend/conf/routes
+// @HASH:99477154ac47421945f2a2e655bb598b0f7fe178
+// @DATE:Mon Nov 30 16:55:54 PST 2015
 
 
 import play.core._
@@ -136,106 +136,110 @@ private[this] lazy val controllers_WorkflowController_linkTags25 = Route("GET", 
 private[this] lazy val controllers_WorkflowController_displayWorkflow26 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("workflow/disWorkflow"))))
         
 
-// @LINE:59
-private[this] lazy val controllers_TagController_home27 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("tag"))))
+// @LINE:57
+private[this] lazy val controllers_WorkflowController_workflowsByTopViewCount27 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("workflow/getTop10WorkflowsByViewCount"))))
         
 
 // @LINE:60
-private[this] lazy val controllers_TagController_tags28 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("tag/tags"))))
+private[this] lazy val controllers_TagController_home28 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("tag"))))
         
 
 // @LINE:61
-private[this] lazy val controllers_TagController_oneService29 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("tag/oneService"))))
+private[this] lazy val controllers_TagController_tags29 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("tag/tags"))))
         
 
-// @LINE:65
-private[this] lazy val controllers_DatasetController_datasetList30 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("climate/datasets"))))
+// @LINE:62
+private[this] lazy val controllers_TagController_oneService30 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("tag/oneService"))))
         
 
 // @LINE:66
-private[this] lazy val controllers_DatasetController_searchDataset31 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("climate/searchDataSet"))))
+private[this] lazy val controllers_DatasetController_datasetList31 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("climate/datasets"))))
         
 
 // @LINE:67
-private[this] lazy val controllers_DatasetController_getSearchResult32 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("climate/getSearchResult"))))
+private[this] lazy val controllers_DatasetController_searchDataset32 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("climate/searchDataSet"))))
         
 
-// @LINE:70
-private[this] lazy val controllers_UserController_profile33 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("users/myProfile"))))
+// @LINE:68
+private[this] lazy val controllers_DatasetController_getSearchResult33 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("climate/getSearchResult"))))
         
 
 // @LINE:71
-private[this] lazy val controllers_UserController_allUsers34 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("users/allUsers"))))
+private[this] lazy val controllers_UserController_profile34 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("users/myProfile"))))
         
 
 // @LINE:72
-private[this] lazy val controllers_UserController_signUpForm35 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("users/signUpForm"))))
+private[this] lazy val controllers_UserController_allUsers35 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("users/allUsers"))))
         
 
 // @LINE:73
-private[this] lazy val controllers_UserController_signUp36 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("users/signUp"))))
+private[this] lazy val controllers_UserController_signUpForm36 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("users/signUpForm"))))
         
 
 // @LINE:74
-private[this] lazy val controllers_UserController_signInForm37 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("users/signInForm"))))
+private[this] lazy val controllers_UserController_signUp37 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("users/signUp"))))
         
 
 // @LINE:75
-private[this] lazy val controllers_UserController_signIn38 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("users/signIn"))))
+private[this] lazy val controllers_UserController_signInForm38 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("users/signInForm"))))
         
 
 // @LINE:76
-private[this] lazy val controllers_UserController_signOut39 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("users/signOut"))))
+private[this] lazy val controllers_UserController_signIn39 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("users/signIn"))))
         
 
 // @LINE:77
-private[this] lazy val controllers_UserController_showFriends40 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("users/friends"))))
+private[this] lazy val controllers_UserController_signOut40 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("users/signOut"))))
         
 
 // @LINE:78
-private[this] lazy val controllers_UserController_addFriend41 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("users/addfriend"))))
+private[this] lazy val controllers_UserController_showFriends41 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("users/friends"))))
         
 
 // @LINE:79
-private[this] lazy val controllers_UserController_deleteFriend42 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("users/deletefriend"))))
+private[this] lazy val controllers_UserController_addFriend42 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("users/addfriend"))))
         
 
 // @LINE:80
-private[this] lazy val controllers_UserController_addSubscribe43 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("users/addSubscribe"))))
+private[this] lazy val controllers_UserController_deleteFriend43 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("users/deletefriend"))))
         
 
 // @LINE:81
-private[this] lazy val controllers_UserController_deleteSubscribe44 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("users/deleteSubscribe"))))
+private[this] lazy val controllers_UserController_addSubscribe44 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("users/addSubscribe"))))
         
 
 // @LINE:82
-private[this] lazy val controllers_UserController_showSubscriptions45 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("users/subscriptions"))))
+private[this] lazy val controllers_UserController_deleteSubscribe45 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("users/deleteSubscribe"))))
         
 
 // @LINE:83
-private[this] lazy val controllers_UserController_oneUser46 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("users/account/"),DynamicPart("userId", """[^/]+""",true))))
+private[this] lazy val controllers_UserController_showSubscriptions46 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("users/subscriptions"))))
         
 
 // @LINE:84
-private[this] lazy val controllers_UserGroupController_showGroups47 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("usergroups/all"))))
+private[this] lazy val controllers_UserController_oneUser47 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("users/account/"),DynamicPart("userId", """[^/]+""",true))))
         
 
 // @LINE:85
-private[this] lazy val controllers_UserGroupController_newGroup48 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("usergroups/addGroup"))))
+private[this] lazy val controllers_UserGroupController_showGroups48 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("usergroups/all"))))
         
 
 // @LINE:86
-private[this] lazy val controllers_UserGroupController_newGroupForm49 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("usergroups/addGroupForm"))))
+private[this] lazy val controllers_UserGroupController_newGroup49 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("usergroups/addGroup"))))
         
 
 // @LINE:87
-private[this] lazy val controllers_UserGroupController_oneGroup50 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("usergroups/"),DynamicPart("userGroupId", """[^/]+""",true))))
+private[this] lazy val controllers_UserGroupController_newGroupForm50 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("usergroups/addGroupForm"))))
         
 
-// @LINE:90
-private[this] lazy val controllers_Assets_at51 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("assets/"),DynamicPart("file", """.+""",false))))
+// @LINE:88
+private[this] lazy val controllers_UserGroupController_oneGroup51 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("usergroups/"),DynamicPart("userGroupId", """[^/]+""",true))))
         
-def documentation = List(("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """home""","""controllers.ClimateServiceController.home(email:String ?= null, vfile:String ?= null, dataset:String ?= null)"""),("""GET""", prefix,"""controllers.ClimateServiceController.home(email:String ?= null, vfile:String ?= null, dataset:String ?= null)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """application""","""controllers.Application.index()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """bugs""","""controllers.BugReportController.reports()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """newReport""","""controllers.BugReportController.newReport()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """bug/list""","""controllers.BugReportController.list()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """delete/report""","""controllers.BugReportController.deleteReport()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """solve/report""","""controllers.BugReportController.solveReport()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """aboutus""","""controllers.AboutusController.aboutUs()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """aboutProject""","""controllers.AboutusController.aboutProject()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """climate""","""controllers.ClimateServiceController.home(email:String ?= null, vfile:String ?= null, dataset:String ?= null)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """climate/tutorial""","""controllers.ClimateServiceController.tutorial()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """climate/climateServices""","""controllers.ClimateServiceController.climateServices()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """climate/mostRecentlyAddedClimateServices""","""controllers.ClimateServiceController.mostRecentlyAddedClimateServices()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """climate/mostRecentlyUsedClimateServices""","""controllers.ClimateServiceController.mostRecentlyUsedClimateServices()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """climate/mostPopularClimateServices""","""controllers.ClimateServiceController.mostPopularClimateServices()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """climate/new/climateServices""","""controllers.ClimateServiceController.newClimateService()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """climate/delete/climateServices""","""controllers.ClimateServiceController.deleteClimateService()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """climate/download/climateServices""","""controllers.ClimateServiceController.downloadClimateService()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """climate/edit/climateServices""","""controllers.ClimateServiceController.editClimateService()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """climate/new/climateServices""","""controllers.ClimateServiceController.addClimateServices()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """climate/oneService""","""controllers.ClimateServiceController.oneService(url:String ?= null)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """workflow/createWorkflow""","""controllers.WorkflowController.createWorkflow()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """workflows""","""controllers.WorkflowController.workflows()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """workflow/workflowCreating""","""controllers.WorkflowController.handleCreateWorkflow()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """workflow/linkTags""","""controllers.WorkflowController.linkTags()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """workflow/disWorkflow""","""controllers.WorkflowController.displayWorkflow(id:Long)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """tag""","""controllers.TagController.home(email:String ?= null, vfile:String ?= null, dataset:String ?= null)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """tag/tags""","""controllers.TagController.tags()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """tag/oneService""","""controllers.TagController.oneService(url:String ?= null)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """climate/datasets""","""controllers.DatasetController.datasetList()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """climate/searchDataSet""","""controllers.DatasetController.searchDataset()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """climate/getSearchResult""","""controllers.DatasetController.getSearchResult()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """users/myProfile""","""controllers.UserController.profile()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """users/allUsers""","""controllers.UserController.allUsers()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """users/signUpForm""","""controllers.UserController.signUpForm()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """users/signUp""","""controllers.UserController.signUp()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """users/signInForm""","""controllers.UserController.signInForm()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """users/signIn""","""controllers.UserController.signIn()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """users/signOut""","""controllers.UserController.signOut()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """users/friends""","""controllers.UserController.showFriends()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """users/addfriend""","""controllers.UserController.addFriend(userId:Long, isSubscribe:Boolean)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """users/deletefriend""","""controllers.UserController.deleteFriend(userId:Long, isSubscribe:Boolean)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """users/addSubscribe""","""controllers.UserController.addSubscribe(userId:Long, isFriend:Boolean)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """users/deleteSubscribe""","""controllers.UserController.deleteSubscribe(userId:Long, isFriend:Boolean)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """users/subscriptions""","""controllers.UserController.showSubscriptions()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """users/account/$userId<[^/]+>""","""controllers.UserController.oneUser(userId:Long)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """usergroups/all""","""controllers.UserGroupController.showGroups()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """usergroups/addGroup""","""controllers.UserGroupController.newGroup()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """usergroups/addGroupForm""","""controllers.UserGroupController.newGroupForm()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """usergroups/$userGroupId<[^/]+>""","""controllers.UserGroupController.oneGroup(userGroupId:Long)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""","""controllers.Assets.at(path:String = "/public", file:String)""")).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
+
+// @LINE:91
+private[this] lazy val controllers_Assets_at52 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("assets/"),DynamicPart("file", """.+""",false))))
+        
+def documentation = List(("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """home""","""controllers.ClimateServiceController.home(email:String ?= null, vfile:String ?= null, dataset:String ?= null)"""),("""GET""", prefix,"""controllers.ClimateServiceController.home(email:String ?= null, vfile:String ?= null, dataset:String ?= null)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """application""","""controllers.Application.index()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """bugs""","""controllers.BugReportController.reports()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """newReport""","""controllers.BugReportController.newReport()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """bug/list""","""controllers.BugReportController.list()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """delete/report""","""controllers.BugReportController.deleteReport()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """solve/report""","""controllers.BugReportController.solveReport()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """aboutus""","""controllers.AboutusController.aboutUs()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """aboutProject""","""controllers.AboutusController.aboutProject()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """climate""","""controllers.ClimateServiceController.home(email:String ?= null, vfile:String ?= null, dataset:String ?= null)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """climate/tutorial""","""controllers.ClimateServiceController.tutorial()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """climate/climateServices""","""controllers.ClimateServiceController.climateServices()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """climate/mostRecentlyAddedClimateServices""","""controllers.ClimateServiceController.mostRecentlyAddedClimateServices()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """climate/mostRecentlyUsedClimateServices""","""controllers.ClimateServiceController.mostRecentlyUsedClimateServices()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """climate/mostPopularClimateServices""","""controllers.ClimateServiceController.mostPopularClimateServices()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """climate/new/climateServices""","""controllers.ClimateServiceController.newClimateService()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """climate/delete/climateServices""","""controllers.ClimateServiceController.deleteClimateService()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """climate/download/climateServices""","""controllers.ClimateServiceController.downloadClimateService()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """climate/edit/climateServices""","""controllers.ClimateServiceController.editClimateService()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """climate/new/climateServices""","""controllers.ClimateServiceController.addClimateServices()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """climate/oneService""","""controllers.ClimateServiceController.oneService(url:String ?= null)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """workflow/createWorkflow""","""controllers.WorkflowController.createWorkflow()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """workflows""","""controllers.WorkflowController.workflows()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """workflow/workflowCreating""","""controllers.WorkflowController.handleCreateWorkflow()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """workflow/linkTags""","""controllers.WorkflowController.linkTags()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """workflow/disWorkflow""","""controllers.WorkflowController.displayWorkflow(id:Long)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """workflow/getTop10WorkflowsByViewCount""","""controllers.WorkflowController.workflowsByTopViewCount()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """tag""","""controllers.TagController.home(email:String ?= null, vfile:String ?= null, dataset:String ?= null)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """tag/tags""","""controllers.TagController.tags()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """tag/oneService""","""controllers.TagController.oneService(url:String ?= null)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """climate/datasets""","""controllers.DatasetController.datasetList()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """climate/searchDataSet""","""controllers.DatasetController.searchDataset()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """climate/getSearchResult""","""controllers.DatasetController.getSearchResult()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """users/myProfile""","""controllers.UserController.profile()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """users/allUsers""","""controllers.UserController.allUsers()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """users/signUpForm""","""controllers.UserController.signUpForm()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """users/signUp""","""controllers.UserController.signUp()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """users/signInForm""","""controllers.UserController.signInForm()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """users/signIn""","""controllers.UserController.signIn()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """users/signOut""","""controllers.UserController.signOut()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """users/friends""","""controllers.UserController.showFriends()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """users/addfriend""","""controllers.UserController.addFriend(userId:Long, isSubscribe:Boolean)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """users/deletefriend""","""controllers.UserController.deleteFriend(userId:Long, isSubscribe:Boolean)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """users/addSubscribe""","""controllers.UserController.addSubscribe(userId:Long, isFriend:Boolean)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """users/deleteSubscribe""","""controllers.UserController.deleteSubscribe(userId:Long, isFriend:Boolean)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """users/subscriptions""","""controllers.UserController.showSubscriptions()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """users/account/$userId<[^/]+>""","""controllers.UserController.oneUser(userId:Long)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """usergroups/all""","""controllers.UserGroupController.showGroups()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """usergroups/addGroup""","""controllers.UserGroupController.newGroup()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """usergroups/addGroupForm""","""controllers.UserGroupController.newGroupForm()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """usergroups/$userGroupId<[^/]+>""","""controllers.UserGroupController.oneGroup(userGroupId:Long)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""","""controllers.Assets.at(path:String = "/public", file:String)""")).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
   case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
   case l => s ++ l.asInstanceOf[List[(String,String,String)]] 
 }}
@@ -459,200 +463,208 @@ case controllers_WorkflowController_displayWorkflow26(params) => {
 }
         
 
-// @LINE:59
-case controllers_TagController_home27(params) => {
+// @LINE:57
+case controllers_WorkflowController_workflowsByTopViewCount27(params) => {
+   call { 
+        invokeHandler(controllers.WorkflowController.workflowsByTopViewCount(), HandlerDef(this, "controllers.WorkflowController", "workflowsByTopViewCount", Nil,"GET", """""", Routes.prefix + """workflow/getTop10WorkflowsByViewCount"""))
+   }
+}
+        
+
+// @LINE:60
+case controllers_TagController_home28(params) => {
    call(params.fromQuery[String]("email", Some(null)), params.fromQuery[String]("vfile", Some(null)), params.fromQuery[String]("dataset", Some(null))) { (email, vfile, dataset) =>
         invokeHandler(controllers.TagController.home(email, vfile, dataset), HandlerDef(this, "controllers.TagController", "home", Seq(classOf[String], classOf[String], classOf[String]),"GET", """ Tag Model""", Routes.prefix + """tag"""))
    }
 }
         
 
-// @LINE:60
-case controllers_TagController_tags28(params) => {
+// @LINE:61
+case controllers_TagController_tags29(params) => {
    call { 
         invokeHandler(controllers.TagController.tags(), HandlerDef(this, "controllers.TagController", "tags", Nil,"GET", """""", Routes.prefix + """tag/tags"""))
    }
 }
         
 
-// @LINE:61
-case controllers_TagController_oneService29(params) => {
+// @LINE:62
+case controllers_TagController_oneService30(params) => {
    call(params.fromQuery[String]("url", Some(null))) { (url) =>
         invokeHandler(controllers.TagController.oneService(url), HandlerDef(this, "controllers.TagController", "oneService", Seq(classOf[String]),"GET", """""", Routes.prefix + """tag/oneService"""))
    }
 }
         
 
-// @LINE:65
-case controllers_DatasetController_datasetList30(params) => {
+// @LINE:66
+case controllers_DatasetController_datasetList31(params) => {
    call { 
         invokeHandler(controllers.DatasetController.datasetList(), HandlerDef(this, "controllers.DatasetController", "datasetList", Nil,"GET", """Keyword search""", Routes.prefix + """climate/datasets"""))
    }
 }
         
 
-// @LINE:66
-case controllers_DatasetController_searchDataset31(params) => {
+// @LINE:67
+case controllers_DatasetController_searchDataset32(params) => {
    call { 
         invokeHandler(controllers.DatasetController.searchDataset(), HandlerDef(this, "controllers.DatasetController", "searchDataset", Nil,"GET", """""", Routes.prefix + """climate/searchDataSet"""))
    }
 }
         
 
-// @LINE:67
-case controllers_DatasetController_getSearchResult32(params) => {
+// @LINE:68
+case controllers_DatasetController_getSearchResult33(params) => {
    call { 
         invokeHandler(controllers.DatasetController.getSearchResult(), HandlerDef(this, "controllers.DatasetController", "getSearchResult", Nil,"GET", """""", Routes.prefix + """climate/getSearchResult"""))
    }
 }
         
 
-// @LINE:70
-case controllers_UserController_profile33(params) => {
+// @LINE:71
+case controllers_UserController_profile34(params) => {
    call { 
         invokeHandler(controllers.UserController.profile(), HandlerDef(this, "controllers.UserController", "profile", Nil,"GET", """User Profiles""", Routes.prefix + """users/myProfile"""))
    }
 }
         
 
-// @LINE:71
-case controllers_UserController_allUsers34(params) => {
+// @LINE:72
+case controllers_UserController_allUsers35(params) => {
    call { 
         invokeHandler(controllers.UserController.allUsers(), HandlerDef(this, "controllers.UserController", "allUsers", Nil,"GET", """""", Routes.prefix + """users/allUsers"""))
    }
 }
         
 
-// @LINE:72
-case controllers_UserController_signUpForm35(params) => {
+// @LINE:73
+case controllers_UserController_signUpForm36(params) => {
    call { 
         invokeHandler(controllers.UserController.signUpForm(), HandlerDef(this, "controllers.UserController", "signUpForm", Nil,"GET", """""", Routes.prefix + """users/signUpForm"""))
    }
 }
         
 
-// @LINE:73
-case controllers_UserController_signUp36(params) => {
+// @LINE:74
+case controllers_UserController_signUp37(params) => {
    call { 
         invokeHandler(controllers.UserController.signUp(), HandlerDef(this, "controllers.UserController", "signUp", Nil,"GET", """""", Routes.prefix + """users/signUp"""))
    }
 }
         
 
-// @LINE:74
-case controllers_UserController_signInForm37(params) => {
+// @LINE:75
+case controllers_UserController_signInForm38(params) => {
    call { 
         invokeHandler(controllers.UserController.signInForm(), HandlerDef(this, "controllers.UserController", "signInForm", Nil,"GET", """""", Routes.prefix + """users/signInForm"""))
    }
 }
         
 
-// @LINE:75
-case controllers_UserController_signIn38(params) => {
+// @LINE:76
+case controllers_UserController_signIn39(params) => {
    call { 
         invokeHandler(controllers.UserController.signIn(), HandlerDef(this, "controllers.UserController", "signIn", Nil,"GET", """""", Routes.prefix + """users/signIn"""))
    }
 }
         
 
-// @LINE:76
-case controllers_UserController_signOut39(params) => {
+// @LINE:77
+case controllers_UserController_signOut40(params) => {
    call { 
         invokeHandler(controllers.UserController.signOut(), HandlerDef(this, "controllers.UserController", "signOut", Nil,"GET", """""", Routes.prefix + """users/signOut"""))
    }
 }
         
 
-// @LINE:77
-case controllers_UserController_showFriends40(params) => {
+// @LINE:78
+case controllers_UserController_showFriends41(params) => {
    call { 
         invokeHandler(controllers.UserController.showFriends(), HandlerDef(this, "controllers.UserController", "showFriends", Nil,"GET", """""", Routes.prefix + """users/friends"""))
    }
 }
         
 
-// @LINE:78
-case controllers_UserController_addFriend41(params) => {
+// @LINE:79
+case controllers_UserController_addFriend42(params) => {
    call(params.fromQuery[Long]("userId", None), params.fromQuery[Boolean]("isSubscribe", None)) { (userId, isSubscribe) =>
         invokeHandler(controllers.UserController.addFriend(userId, isSubscribe), HandlerDef(this, "controllers.UserController", "addFriend", Seq(classOf[Long], classOf[Boolean]),"GET", """""", Routes.prefix + """users/addfriend"""))
    }
 }
         
 
-// @LINE:79
-case controllers_UserController_deleteFriend42(params) => {
+// @LINE:80
+case controllers_UserController_deleteFriend43(params) => {
    call(params.fromQuery[Long]("userId", None), params.fromQuery[Boolean]("isSubscribe", None)) { (userId, isSubscribe) =>
         invokeHandler(controllers.UserController.deleteFriend(userId, isSubscribe), HandlerDef(this, "controllers.UserController", "deleteFriend", Seq(classOf[Long], classOf[Boolean]),"GET", """""", Routes.prefix + """users/deletefriend"""))
    }
 }
         
 
-// @LINE:80
-case controllers_UserController_addSubscribe43(params) => {
+// @LINE:81
+case controllers_UserController_addSubscribe44(params) => {
    call(params.fromQuery[Long]("userId", None), params.fromQuery[Boolean]("isFriend", None)) { (userId, isFriend) =>
         invokeHandler(controllers.UserController.addSubscribe(userId, isFriend), HandlerDef(this, "controllers.UserController", "addSubscribe", Seq(classOf[Long], classOf[Boolean]),"GET", """""", Routes.prefix + """users/addSubscribe"""))
    }
 }
         
 
-// @LINE:81
-case controllers_UserController_deleteSubscribe44(params) => {
+// @LINE:82
+case controllers_UserController_deleteSubscribe45(params) => {
    call(params.fromQuery[Long]("userId", None), params.fromQuery[Boolean]("isFriend", None)) { (userId, isFriend) =>
         invokeHandler(controllers.UserController.deleteSubscribe(userId, isFriend), HandlerDef(this, "controllers.UserController", "deleteSubscribe", Seq(classOf[Long], classOf[Boolean]),"GET", """""", Routes.prefix + """users/deleteSubscribe"""))
    }
 }
         
 
-// @LINE:82
-case controllers_UserController_showSubscriptions45(params) => {
+// @LINE:83
+case controllers_UserController_showSubscriptions46(params) => {
    call { 
         invokeHandler(controllers.UserController.showSubscriptions(), HandlerDef(this, "controllers.UserController", "showSubscriptions", Nil,"GET", """""", Routes.prefix + """users/subscriptions"""))
    }
 }
         
 
-// @LINE:83
-case controllers_UserController_oneUser46(params) => {
+// @LINE:84
+case controllers_UserController_oneUser47(params) => {
    call(params.fromPath[Long]("userId", None)) { (userId) =>
         invokeHandler(controllers.UserController.oneUser(userId), HandlerDef(this, "controllers.UserController", "oneUser", Seq(classOf[Long]),"GET", """""", Routes.prefix + """users/account/$userId<[^/]+>"""))
    }
 }
         
 
-// @LINE:84
-case controllers_UserGroupController_showGroups47(params) => {
+// @LINE:85
+case controllers_UserGroupController_showGroups48(params) => {
    call { 
         invokeHandler(controllers.UserGroupController.showGroups(), HandlerDef(this, "controllers.UserGroupController", "showGroups", Nil,"GET", """""", Routes.prefix + """usergroups/all"""))
    }
 }
         
 
-// @LINE:85
-case controllers_UserGroupController_newGroup48(params) => {
+// @LINE:86
+case controllers_UserGroupController_newGroup49(params) => {
    call { 
         invokeHandler(controllers.UserGroupController.newGroup(), HandlerDef(this, "controllers.UserGroupController", "newGroup", Nil,"GET", """""", Routes.prefix + """usergroups/addGroup"""))
    }
 }
         
 
-// @LINE:86
-case controllers_UserGroupController_newGroupForm49(params) => {
+// @LINE:87
+case controllers_UserGroupController_newGroupForm50(params) => {
    call { 
         invokeHandler(controllers.UserGroupController.newGroupForm(), HandlerDef(this, "controllers.UserGroupController", "newGroupForm", Nil,"GET", """""", Routes.prefix + """usergroups/addGroupForm"""))
    }
 }
         
 
-// @LINE:87
-case controllers_UserGroupController_oneGroup50(params) => {
+// @LINE:88
+case controllers_UserGroupController_oneGroup51(params) => {
    call(params.fromPath[Long]("userGroupId", None)) { (userGroupId) =>
         invokeHandler(controllers.UserGroupController.oneGroup(userGroupId), HandlerDef(this, "controllers.UserGroupController", "oneGroup", Seq(classOf[Long]),"GET", """""", Routes.prefix + """usergroups/$userGroupId<[^/]+>"""))
    }
 }
         
 
-// @LINE:90
-case controllers_Assets_at51(params) => {
+// @LINE:91
+case controllers_Assets_at52(params) => {
    call(Param[String]("path", Right("/public")), params.fromPath[String]("file", None)) { (path, file) =>
         invokeHandler(controllers.Assets.at(path, file), HandlerDef(this, "controllers.Assets", "at", Seq(classOf[String], classOf[String]),"GET", """Map static resources from the /public folder to the /assets URL path""", Routes.prefix + """assets/$file<.+>"""))
    }

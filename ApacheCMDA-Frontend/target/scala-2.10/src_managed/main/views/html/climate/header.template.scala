@@ -81,6 +81,7 @@ Seq[Any](format.raw/*18.4*/("""
 							<li><a href=""""),_display_(Seq[Any](/*40.22*/routes/*40.28*/.WorkflowController.workflows())),format.raw/*40.59*/("""">Workflow List</a></li>
 							<li><a href=""""),_display_(Seq[Any](/*41.22*/routes/*41.28*/.TagController.tags())),format.raw/*41.49*/("""">Tag List</a></li>
 							<li><a href=""""),_display_(Seq[Any](/*42.22*/routes/*42.28*/.WorkflowController.createWorkflow())),format.raw/*42.64*/("""">Create Workflow</a></li>
+							<li><a href=""""),_display_(Seq[Any](/*43.22*/routes/*43.28*/.WorkflowController.workflowsByTopViewCount())),format.raw/*43.73*/("""">Workflow Popularity</a></li>
 						</ul>
 
 					</li>
@@ -90,7 +91,7 @@ Seq[Any](format.raw/*18.4*/("""
 							class="caret"></b></a>
 						<ul class="dropdown-menu">
 
-						<li><a href=""""),_display_(Seq[Any](/*52.21*/routes/*52.27*/.ClimateServiceController.climateServices())),format.raw/*52.70*/("""">Service List</a></li>
+						<li><a href=""""),_display_(Seq[Any](/*53.21*/routes/*53.27*/.ClimateServiceController.climateServices())),format.raw/*53.70*/("""">Service List</a></li>
 					
 						</ul>
 					
@@ -100,51 +101,51 @@ Seq[Any](format.raw/*18.4*/("""
 							class="caret"></b></a>
 						<ul class="dropdown-menu">
 						
-						<li><a href=""""),_display_(Seq[Any](/*62.21*/routes/*62.27*/.DatasetController.datasetList())),format.raw/*62.59*/("""">Dataset List</a></li>
-						<li><a href=""""),_display_(Seq[Any](/*63.21*/routes/*63.27*/.DatasetController.searchDataset())),format.raw/*63.61*/("""">Search dataset</a></li>
+						<li><a href=""""),_display_(Seq[Any](/*63.21*/routes/*63.27*/.DatasetController.datasetList())),format.raw/*63.59*/("""">Dataset List</a></li>
+						<li><a href=""""),_display_(Seq[Any](/*64.21*/routes/*64.27*/.DatasetController.searchDataset())),format.raw/*64.61*/("""">Search dataset</a></li>
 						</ul>
 					</li>
-					"""),format.raw/*66.42*/("""
-						"""),format.raw/*67.67*/("""
-							"""),format.raw/*68.34*/("""
-						"""),format.raw/*69.37*/("""
-							"""),format.raw/*70.101*/("""
-							"""),format.raw/*71.106*/("""
-						"""),format.raw/*72.16*/("""
-					"""),format.raw/*73.15*/("""
+					"""),format.raw/*67.42*/("""
+						"""),format.raw/*68.67*/("""
+							"""),format.raw/*69.34*/("""
+						"""),format.raw/*70.37*/("""
+							"""),format.raw/*71.101*/("""
+							"""),format.raw/*72.106*/("""
+						"""),format.raw/*73.16*/("""
+					"""),format.raw/*74.15*/("""
 					
 					<li class="dropdown"><a href="#"
 						class="dropdown-toggle" data-toggle="dropdown">About<b
 							class="caret"></b></a>
 						<ul class="dropdown-menu">
-						<li><a href=""""),_display_(Seq[Any](/*79.21*/routes/*79.27*/.ClimateServiceController.home())),format.raw/*79.59*/("""">Home</a></li>
-						<li><a href=""""),_display_(Seq[Any](/*80.21*/routes/*80.27*/.AboutusController.aboutUs())),format.raw/*80.55*/("""">About Us</a></li>
-						<li><a href=""""),_display_(Seq[Any](/*81.21*/routes/*81.27*/.AboutusController.aboutProject())),format.raw/*81.60*/("""">About project</a></li>
+						<li><a href=""""),_display_(Seq[Any](/*80.21*/routes/*80.27*/.ClimateServiceController.home())),format.raw/*80.59*/("""">Home</a></li>
+						<li><a href=""""),_display_(Seq[Any](/*81.21*/routes/*81.27*/.AboutusController.aboutUs())),format.raw/*81.55*/("""">About Us</a></li>
+						<li><a href=""""),_display_(Seq[Any](/*82.21*/routes/*82.27*/.AboutusController.aboutProject())),format.raw/*82.60*/("""">About project</a></li>
 						</ul>
 					</li>
-					"""),_display_(Seq[Any](/*84.7*/if(session.get("userId") == null || session.get("userId").trim.isEmpty)/*84.78*/ {_display_(Seq[Any](format.raw/*84.80*/("""
+					"""),_display_(Seq[Any](/*85.7*/if(session.get("userId") == null || session.get("userId").trim.isEmpty)/*85.78*/ {_display_(Seq[Any](format.raw/*85.80*/("""
 					<li class="dropdown"><a href="#"
 											class="dropdown-toggle" data-toggle="dropdown">Sign In / Sign Up<b
 							class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<li><a href=""""),_display_(Seq[Any](/*89.22*/routes/*89.28*/.UserController.signInForm)),format.raw/*89.54*/("""">Sign In</a></li>
-							<li><a href=""""),_display_(Seq[Any](/*90.22*/routes/*90.28*/.UserController.signUpForm)),format.raw/*90.54*/("""">Sign Up</a></li>
+							<li><a href=""""),_display_(Seq[Any](/*90.22*/routes/*90.28*/.UserController.signInForm)),format.raw/*90.54*/("""">Sign In</a></li>
+							<li><a href=""""),_display_(Seq[Any](/*91.22*/routes/*91.28*/.UserController.signUpForm)),format.raw/*91.54*/("""">Sign Up</a></li>
 						</ul>
 					</li>
-					""")))}/*93.7*/else/*93.11*/{_display_(Seq[Any](format.raw/*93.12*/("""
+					""")))}/*94.7*/else/*94.11*/{_display_(Seq[Any](format.raw/*94.12*/("""
 					<li class="dropdown"><a href="#"
 											class="dropdown-toggle" data-toggle="dropdown">My Profile<b
 							class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<li><a href=""""),_display_(Seq[Any](/*98.22*/routes/*98.28*/.UserController.profile)),format.raw/*98.51*/("""">Profile</a></li>
-							<li><a href=""""),_display_(Seq[Any](/*99.22*/routes/*99.28*/.UserController.allUsers)),format.raw/*99.52*/("""">All Users</a></li>
-							<li><a href=""""),_display_(Seq[Any](/*100.22*/routes/*100.28*/.UserController.showFriends)),format.raw/*100.55*/("""">Friends</a></li>
-							<li><a href=""""),_display_(Seq[Any](/*101.22*/routes/*101.28*/.UserController.showSubscriptions)),format.raw/*101.61*/("""">Subscriptions</a></li>
-							<li><a href=""""),_display_(Seq[Any](/*102.22*/routes/*102.28*/.UserGroupController.showGroups)),format.raw/*102.59*/("""">User Groups</a></li>
-							<li><a href=""""),_display_(Seq[Any](/*103.22*/routes/*103.28*/.UserController.signOut)),format.raw/*103.51*/("""">Sign Out</a></li>
+							<li><a href=""""),_display_(Seq[Any](/*99.22*/routes/*99.28*/.UserController.profile)),format.raw/*99.51*/("""">Profile</a></li>
+							<li><a href=""""),_display_(Seq[Any](/*100.22*/routes/*100.28*/.UserController.allUsers)),format.raw/*100.52*/("""">All Users</a></li>
+							<li><a href=""""),_display_(Seq[Any](/*101.22*/routes/*101.28*/.UserController.showFriends)),format.raw/*101.55*/("""">Friends</a></li>
+							<li><a href=""""),_display_(Seq[Any](/*102.22*/routes/*102.28*/.UserController.showSubscriptions)),format.raw/*102.61*/("""">Subscriptions</a></li>
+							<li><a href=""""),_display_(Seq[Any](/*103.22*/routes/*103.28*/.UserGroupController.showGroups)),format.raw/*103.59*/("""">User Groups</a></li>
+							<li><a href=""""),_display_(Seq[Any](/*104.22*/routes/*104.28*/.UserController.signOut)),format.raw/*104.51*/("""">Sign Out</a></li>
 						</ul>
 					</li>
-					""")))})),format.raw/*106.7*/("""
+					""")))})),format.raw/*107.7*/("""
 				</ul>
 			</div>
 			<!--/.nav-collapse -->
@@ -162,11 +163,11 @@ Seq[Any](format.raw/*18.4*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Mon Nov 30 16:01:40 PST 2015
-                    SOURCE: /Users/vincent/Desktop/SoC/Lab/SOC-Fall-2015/ApacheCMDA-Frontend/app/views/climate/header.scala.html
-                    HASH: 648133a157455439029a17a9f537bebe21cad4a5
-                    MATRIX: 3171->1205|3267->1207|3799->1703|3814->1709|3874->1747|3974->1811|3989->1817|4040->1846|4425->2195|4440->2201|4493->2232|4575->2278|4590->2284|4633->2305|4710->2346|4725->2352|4783->2388|5061->2630|5076->2636|5141->2679|5427->2929|5442->2935|5496->2967|5576->3011|5591->3017|5647->3051|5729->3141|5764->3208|5800->3242|5835->3279|5872->3380|5909->3486|5944->3502|5978->3517|6203->3706|6218->3712|6272->3744|6344->3780|6359->3786|6409->3814|6485->3854|6500->3860|6555->3893|6644->3947|6724->4018|6764->4020|7001->4221|7016->4227|7064->4253|7140->4293|7155->4299|7203->4325|7269->4373|7282->4377|7321->4378|7551->4572|7566->4578|7611->4601|7687->4641|7702->4647|7748->4671|7827->4713|7843->4719|7893->4746|7970->4786|7986->4792|8042->4825|8125->4871|8141->4877|8195->4908|8276->4952|8292->4958|8338->4981|8419->5030
-                    LINES: 56->18|59->18|70->29|70->29|70->29|71->30|71->30|71->30|81->40|81->40|81->40|82->41|82->41|82->41|83->42|83->42|83->42|93->52|93->52|93->52|103->62|103->62|103->62|104->63|104->63|104->63|107->66|108->67|109->68|110->69|111->70|112->71|113->72|114->73|120->79|120->79|120->79|121->80|121->80|121->80|122->81|122->81|122->81|125->84|125->84|125->84|130->89|130->89|130->89|131->90|131->90|131->90|134->93|134->93|134->93|139->98|139->98|139->98|140->99|140->99|140->99|141->100|141->100|141->100|142->101|142->101|142->101|143->102|143->102|143->102|144->103|144->103|144->103|147->106
+                    DATE: Mon Nov 30 16:55:56 PST 2015
+                    SOURCE: /Users/Ethan/Desktop/teamMerge/SOC-Fall-2015-Team18-Lead-Xin-Wan/ApacheCMDA-Frontend/app/views/climate/header.scala.html
+                    HASH: 0657dcde44449adac3d326f4e177a7ec529c8639
+                    MATRIX: 3171->1205|3267->1207|3799->1703|3814->1709|3874->1747|3974->1811|3989->1817|4040->1846|4425->2195|4440->2201|4493->2232|4575->2278|4590->2284|4633->2305|4710->2346|4725->2352|4783->2388|4867->2436|4882->2442|4949->2487|5231->2733|5246->2739|5311->2782|5597->3032|5612->3038|5666->3070|5746->3114|5761->3120|5817->3154|5899->3244|5934->3311|5970->3345|6005->3382|6042->3483|6079->3589|6114->3605|6148->3620|6373->3809|6388->3815|6442->3847|6514->3883|6529->3889|6579->3917|6655->3957|6670->3963|6725->3996|6814->4050|6894->4121|6934->4123|7171->4324|7186->4330|7234->4356|7310->4396|7325->4402|7373->4428|7439->4476|7452->4480|7491->4481|7721->4675|7736->4681|7781->4704|7858->4744|7874->4750|7921->4774|8000->4816|8016->4822|8066->4849|8143->4889|8159->4895|8215->4928|8298->4974|8314->4980|8368->5011|8449->5055|8465->5061|8511->5084|8592->5133
+                    LINES: 56->18|59->18|70->29|70->29|70->29|71->30|71->30|71->30|81->40|81->40|81->40|82->41|82->41|82->41|83->42|83->42|83->42|84->43|84->43|84->43|94->53|94->53|94->53|104->63|104->63|104->63|105->64|105->64|105->64|108->67|109->68|110->69|111->70|112->71|113->72|114->73|115->74|121->80|121->80|121->80|122->81|122->81|122->81|123->82|123->82|123->82|126->85|126->85|126->85|131->90|131->90|131->90|132->91|132->91|132->91|135->94|135->94|135->94|140->99|140->99|140->99|141->100|141->100|141->100|142->101|142->101|142->101|143->102|143->102|143->102|144->103|144->103|144->103|145->104|145->104|145->104|148->107
                     -- GENERATED --
                 */
             

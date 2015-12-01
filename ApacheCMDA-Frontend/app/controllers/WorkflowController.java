@@ -11,6 +11,7 @@ import play.mvc.Result;
 import views.html.climate.createWorkflow;
 import views.html.climate.workflows;
 import views.html.climate.workflowDisplay;
+import views.html.climate.workflowsPopularity;
 
 /**
  * Created by zmhbh on 11/18/15.
@@ -24,6 +25,10 @@ public class WorkflowController extends Controller{
 
     public static Result createWorkflow() {
         return ok(createWorkflow.render(workflowForm));
+    }
+
+    public static Result workflowsByTopViewCount() {
+        return ok(workflowsPopularity.render(Workflow.getTop10WorkflowsByViewCount(), workflowForm));
     }
 
     public static Result handleCreateWorkflow(){
@@ -71,8 +76,11 @@ public class WorkflowController extends Controller{
 
     public static Result displayWorkflow(long id){
         Workflow workflow=Workflow.getWorkflow(id);
+        workflow.updateViewCount(id);
         return ok(workflowDisplay.render(workflow));
     }
+
+
 
 
     /*public static Result createWorkflow() {
